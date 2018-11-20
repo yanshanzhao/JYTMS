@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://222.173.26.44:8090/service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://222.173.26.44:8090/service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://222.173.26.44:8090/service">
+      <s:element name="Send_SMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Send_SMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Send_SMSResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Balance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BalanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sele_BlackVar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str_black" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sele_BlackVarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sele_BlackVarResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sms_Record">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="starttime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endtime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sms_RecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sms_RecordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vox_Record">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="starttime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endtime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vox_RecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Vox_RecordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vox_RecordBill">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vox_RecordBillResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Vox_RecordBillResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vox_RecordBill_Time">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="starttime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endtime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Vox_RecordBill_TimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Vox_RecordBill_TimeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Send_SMSSoapIn">
+    <wsdl:part name="parameters" element="tns:Send_SMS" />
+  </wsdl:message>
+  <wsdl:message name="Send_SMSSoapOut">
+    <wsdl:part name="parameters" element="tns:Send_SMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="BalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Balance" />
+  </wsdl:message>
+  <wsdl:message name="BalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:BalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sele_BlackVarSoapIn">
+    <wsdl:part name="parameters" element="tns:Sele_BlackVar" />
+  </wsdl:message>
+  <wsdl:message name="Sele_BlackVarSoapOut">
+    <wsdl:part name="parameters" element="tns:Sele_BlackVarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sms_RecordSoapIn">
+    <wsdl:part name="parameters" element="tns:Sms_Record" />
+  </wsdl:message>
+  <wsdl:message name="Sms_RecordSoapOut">
+    <wsdl:part name="parameters" element="tns:Sms_RecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordSoapIn">
+    <wsdl:part name="parameters" element="tns:Vox_Record" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordSoapOut">
+    <wsdl:part name="parameters" element="tns:Vox_RecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBillSoapIn">
+    <wsdl:part name="parameters" element="tns:Vox_RecordBill" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBillSoapOut">
+    <wsdl:part name="parameters" element="tns:Vox_RecordBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBill_TimeSoapIn">
+    <wsdl:part name="parameters" element="tns:Vox_RecordBill_Time" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBill_TimeSoapOut">
+    <wsdl:part name="parameters" element="tns:Vox_RecordBill_TimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Send_SMSHttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Send_SMSHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="BalanceHttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BalanceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Sele_BlackVarHttpGetIn">
+    <wsdl:part name="str_black" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Sele_BlackVarHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="Sms_RecordHttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Sms_RecordHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordHttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBillHttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="Nid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBillHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBill_TimeHttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBill_TimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Send_SMSHttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="mobile" type="s:string" />
+    <wsdl:part name="msg" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Send_SMSHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="BalanceHttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BalanceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Sele_BlackVarHttpPostIn">
+    <wsdl:part name="str_black" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Sele_BlackVarHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="Sms_RecordHttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Sms_RecordHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordHttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBillHttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="Nid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBillHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBill_TimeHttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="starttime" type="s:string" />
+    <wsdl:part name="endtime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Vox_RecordBill_TimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="Send_SMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送数据,1代表发送成功,支持超长短信自动拆分功能</wsdl:documentation>
+      <wsdl:input message="tns:Send_SMSSoapIn" />
+      <wsdl:output message="tns:Send_SMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户余额</wsdl:documentation>
+      <wsdl:input message="tns:BalanceSoapIn" />
+      <wsdl:output message="tns:BalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sele_BlackVar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询过滤的非法字符,并显示</wsdl:documentation>
+      <wsdl:input message="tns:Sele_BlackVarSoapIn" />
+      <wsdl:output message="tns:Sele_BlackVarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sms_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询发送短信记录,时间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Sms_RecordSoapIn" />
+      <wsdl:output message="tns:Sms_RecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询发送语音记录状态,时间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordSoapIn" />
+      <wsdl:output message="tns:Vox_RecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据NID查询发送语音记录记费情况</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordBillSoapIn" />
+      <wsdl:output message="tns:Vox_RecordBillSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill_Time">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按时间查询发送语音记录记费情况时,间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordBill_TimeSoapIn" />
+      <wsdl:output message="tns:Vox_RecordBill_TimeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="Send_SMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送数据,1代表发送成功,支持超长短信自动拆分功能</wsdl:documentation>
+      <wsdl:input message="tns:Send_SMSHttpGetIn" />
+      <wsdl:output message="tns:Send_SMSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户余额</wsdl:documentation>
+      <wsdl:input message="tns:BalanceHttpGetIn" />
+      <wsdl:output message="tns:BalanceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sele_BlackVar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询过滤的非法字符,并显示</wsdl:documentation>
+      <wsdl:input message="tns:Sele_BlackVarHttpGetIn" />
+      <wsdl:output message="tns:Sele_BlackVarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sms_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询发送短信记录,时间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Sms_RecordHttpGetIn" />
+      <wsdl:output message="tns:Sms_RecordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询发送语音记录状态,时间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordHttpGetIn" />
+      <wsdl:output message="tns:Vox_RecordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据NID查询发送语音记录记费情况</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordBillHttpGetIn" />
+      <wsdl:output message="tns:Vox_RecordBillHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill_Time">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按时间查询发送语音记录记费情况时,间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordBill_TimeHttpGetIn" />
+      <wsdl:output message="tns:Vox_RecordBill_TimeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="Send_SMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送数据,1代表发送成功,支持超长短信自动拆分功能</wsdl:documentation>
+      <wsdl:input message="tns:Send_SMSHttpPostIn" />
+      <wsdl:output message="tns:Send_SMSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取用户余额</wsdl:documentation>
+      <wsdl:input message="tns:BalanceHttpPostIn" />
+      <wsdl:output message="tns:BalanceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sele_BlackVar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询过滤的非法字符,并显示</wsdl:documentation>
+      <wsdl:input message="tns:Sele_BlackVarHttpPostIn" />
+      <wsdl:output message="tns:Sele_BlackVarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sms_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询发送短信记录,时间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Sms_RecordHttpPostIn" />
+      <wsdl:output message="tns:Sms_RecordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询发送语音记录状态,时间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordHttpPostIn" />
+      <wsdl:output message="tns:Vox_RecordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据NID查询发送语音记录记费情况</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordBillHttpPostIn" />
+      <wsdl:output message="tns:Vox_RecordBillHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill_Time">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">按时间查询发送语音记录记费情况时,间格式为：2010-05-15 12:01:25</wsdl:documentation>
+      <wsdl:input message="tns:Vox_RecordBill_TimeHttpPostIn" />
+      <wsdl:output message="tns:Vox_RecordBill_TimeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Send_SMS">
+      <soap:operation soapAction="http://222.173.26.44:8090/service/Send_SMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <soap:operation soapAction="http://222.173.26.44:8090/service/Balance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sele_BlackVar">
+      <soap:operation soapAction="http://222.173.26.44:8090/service/Sele_BlackVar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sms_Record">
+      <soap:operation soapAction="http://222.173.26.44:8090/service/Sms_Record" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_Record">
+      <soap:operation soapAction="http://222.173.26.44:8090/service/Vox_Record" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill">
+      <soap:operation soapAction="http://222.173.26.44:8090/service/Vox_RecordBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill_Time">
+      <soap:operation soapAction="http://222.173.26.44:8090/service/Vox_RecordBill_Time" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Send_SMS">
+      <soap12:operation soapAction="http://222.173.26.44:8090/service/Send_SMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <soap12:operation soapAction="http://222.173.26.44:8090/service/Balance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sele_BlackVar">
+      <soap12:operation soapAction="http://222.173.26.44:8090/service/Sele_BlackVar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sms_Record">
+      <soap12:operation soapAction="http://222.173.26.44:8090/service/Sms_Record" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_Record">
+      <soap12:operation soapAction="http://222.173.26.44:8090/service/Vox_Record" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill">
+      <soap12:operation soapAction="http://222.173.26.44:8090/service/Vox_RecordBill" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill_Time">
+      <soap12:operation soapAction="http://222.173.26.44:8090/service/Vox_RecordBill_Time" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Send_SMS">
+      <http:operation location="/Send_SMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <http:operation location="/Balance" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sele_BlackVar">
+      <http:operation location="/Sele_BlackVar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sms_Record">
+      <http:operation location="/Sms_Record" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_Record">
+      <http:operation location="/Vox_Record" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill">
+      <http:operation location="/Vox_RecordBill" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill_Time">
+      <http:operation location="/Vox_RecordBill_Time" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Send_SMS">
+      <http:operation location="/Send_SMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Balance">
+      <http:operation location="/Balance" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sele_BlackVar">
+      <http:operation location="/Sele_BlackVar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sms_Record">
+      <http:operation location="/Sms_Record" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_Record">
+      <http:operation location="/Vox_Record" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill">
+      <http:operation location="/Vox_RecordBill" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vox_RecordBill_Time">
+      <http:operation location="/Vox_RecordBill_Time" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://222.173.26.44:8090/service/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://222.173.26.44:8090/service/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://222.173.26.44:8090/service/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://222.173.26.44:8090/service/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

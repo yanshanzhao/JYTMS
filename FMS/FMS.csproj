@@ -1,0 +1,4229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D65E32D-C5E7-443B-BE28-81A9D16A6EF0}</ProjectGuid>
+    <ProjectTypeGuids>{563295b5-8906-4a76-be2d-ff8e711c1204};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FMS</RootNamespace>
+    <AssemblyName>FMS</AssemblyName>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Forms.Charts, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=f1bb83df6a8597fb, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Extended, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=85eae29607c9f5f3, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms.Professional, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=6b5c571512bede7c, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Reporting, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=ff9cb9557af1f587, processorArchitecture=MSIL" />
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JYMain\App_Data\Reference\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JYMain\App_Data\Reference\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+    <None Include="CWGL\DataSets\DSXTWDR.xsc">
+      <DependentUpon>DSXTWDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\DataSets\DSXTWDR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSXTWDR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\DataSets\DSXTWDR.xss">
+      <DependentUpon>DSXTWDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\DHWTHCX\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\DHWTHCX\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CWGL\DHWTHCX\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\GLSDWNWYYSR\DSGLSDWNWYYSR.xsc">
+      <DependentUpon>DSGLSDWNWYYSR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\GLSDWNWYYSR\DSGLSDWNWYYSR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSGLSDWNWYYSR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CWGL\GLSDWNWYYSR\DSGLSDWNWYYSR.xss">
+      <DependentUpon>DSGLSDWNWYYSR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\LSDWCKCX\DSLSDWCKCX.xsc">
+      <DependentUpon>DSLSDWCKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\LSDWCKCX\DSLSDWCKCX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLSDWCKCX.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CWGL\LSDWCKCX\DSLSDWCKCX.xss">
+      <DependentUpon>DSLSDWCKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\QRJKYBF\DSYBFQRJK.xsc">
+      <DependentUpon>DSYBFQRJK.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\QRJKYBF\DSYBFQRJK.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYBFQRJK1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CWGL\QRJKYBF\DSYBFQRJK.xss">
+      <DependentUpon>DSYBFQRJK.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\XTWSP\DSSP.xsc">
+      <DependentUpon>DSSP.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\XTWSP\DSSP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\XTWSP\DSSP.xss">
+      <DependentUpon>DSSP.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\XTWSR\DSXtDKxz.xsc">
+      <DependentUpon>DSXtDKxz.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\XTWSR\DSXtDKxz.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSXtDKxz.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\XTWSR\DSXtDKxz.xss">
+      <DependentUpon>DSXtDKxz.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFDWKDR\DSYBFDWKDR.xsc">
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFDWKDR\DSYBFDWKDR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYBFDWKDR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\YBFDWKDR\DSYBFDWKDR.xss">
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFJSXCX\DSYBF.xsc">
+      <DependentUpon>DSYBF.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFJSXCX\DSYBF.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYBF.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\YBFJSXCX\DSYBF.xss">
+      <DependentUpon>DSYBF.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFNHDR\DSYBFDR.xsc">
+      <DependentUpon>DSYBFDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFNHDR\DSYBFDR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYBFDR1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CWGL\YBFNHDR\DSYBFDR.xss">
+      <DependentUpon>DSYBFDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YDTZFCX\DSXTSRCX.xsc">
+      <DependentUpon>DSXTSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YDTZFCX\DSXTSRCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSXTSRCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\YDTZFCX\DSXTSRCX.xss">
+      <DependentUpon>DSXTSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YYSRTJ2\DSXBYYSRCX.xsc">
+      <DependentUpon>DSXBYYSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YYSRTJ2\DSXBYYSRCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSXBYYSRCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\YYSRTJ2\DSXBYYSRCX.xss">
+      <DependentUpon>DSXBYYSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\TZFGBFJKRB\DSTFMSXTSR.xsc">
+      <DependentUpon>DSTFMSXTSR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\TZFGBFJKRB\DSTFMSXTSR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSTFMSXTSR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\TZFGBFJKRB\DSTFMSXTSR.xss">
+      <DependentUpon>DSTFMSXTSR.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\DSKQCCX\DSDSKQCCX.xsc">
+      <DependentUpon>DSDSKQCCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\DSKQCCX\DSDSKQCCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKQCCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\DSKQCCX\DSDSKQCCX.xss">
+      <DependentUpon>DSDSKQCCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\SFTZFCX\SFTHZ\DSSfthz.xsc">
+      <DependentUpon>DSSfthz.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\SFTZFCX\SFTHZ\DSSfthz.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSfthz.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\SFTZFCX\SFTHZ\DSSfthz.xss">
+      <DependentUpon>DSSfthz.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\SFTZFCX\SFTYD\DSsftyd.xsc">
+      <DependentUpon>DSsftyd.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\SFTZFCX\SFTYD\DSsftyd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSsftyd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\SFTZFCX\SFTYD\DSsftyd.xss">
+      <DependentUpon>DSsftyd.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDWKDR\dsk\DSDSKDWKDR.xsc">
+      <DependentUpon>DSDSKDWKDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDWKDR\dsk\DSDSKDWKDR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKDWKDR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKDWKDR\dsk\DSDSKDWKDR.xss">
+      <DependentUpon>DSDSKDWKDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDWKDR\dsk\DSYBFDWKDR.xsc">
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDWKDR\dsk\DSYBFDWKDR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYBFDWKDR1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKDWKDR\dsk\DSYBFDWKDR.xss">
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKEWMZFDR\DSDKSEWMZFDR.xsc">
+      <DependentUpon>DSDKSEWMZFDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKEWMZFDR\DSDKSEWMZFDR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDKSEWMZFDR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKEWMZFDR\DSDKSEWMZFDR.xss">
+      <DependentUpon>DSDKSEWMZFDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKPOSDR\DSDSKPLPOS.xsc">
+      <DependentUpon>DSDSKPLPOS.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKPOSDR\DSDSKPLPOS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKPLPOS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKPOSDR\DSDSKPLPOS.xss">
+      <DependentUpon>DSDSKPLPOS.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKPOSFA\DSPOSFA.xsc">
+      <DependentUpon>DSPOSFA.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKPOSFA\DSPOSFA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPOSFA.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKPOSFA\DSPOSFA.xss">
+      <DependentUpon>DSPOSFA.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKSFTHZ\DSDskhz.xsc">
+      <DependentUpon>DSDskhz.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKSFTHZ\DSDskhz.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDskhz.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKSFTHZ\DSDskhz.xss">
+      <DependentUpon>DSDskhz.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\LSDDZD\DSLSDDZD.xsc">
+      <DependentUpon>DSLSDDZD.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\LSDDZD\DSLSDDZD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLSDDZD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\LSDDZD\DSLSDDZD.xss">
+      <DependentUpon>DSLSDDZD.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKZZ\DSDSKZZNEW.xsc">
+      <DependentUpon>DSDSKZZNEW.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKZZ\DSDSKZZNEW.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKZZNEW1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKZZ\DSDSKZZNEW.xss">
+      <DependentUpon>DSDSKZZNEW.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\THBJ\DSYDTH.xsc">
+      <DependentUpon>DSYDTH.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\THBJ\DSYDTH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYDTH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\THBJ\DSYDTH.xss">
+      <DependentUpon>DSYDTH.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\DQXX\DSQSXX.xsc">
+      <DependentUpon>DSQSXX.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\DQXX\DSQSXX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSQSXX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JCSJ\DQXX\DSQSXX.xss">
+      <DependentUpon>DSQSXX.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\POSBh\DSAJGCX1.xsc">
+      <DependentUpon>DSAJGCX1.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\POSBh\DSAJGCX1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAJGCX1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JCSJ\POSBh\DSAJGCX1.xss">
+      <DependentUpon>DSAJGCX1.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\WDXXWH\DSWDXX.xsc">
+      <DependentUpon>DSWDXX.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\WDXXWH\DSWDXX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSWDXX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JCSJ\WDXXWH\DSWDXX.xss">
+      <DependentUpon>DSWDXX.xsd</DependentUpon>
+    </None>
+    <None Include="SeleFrm\DSJG.xsc">
+      <DependentUpon>DSJG.xsd</DependentUpon>
+    </None>
+    <None Include="SeleFrm\DSJG.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSJG.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SeleFrm\DSJG.xss">
+      <DependentUpon>DSJG.xsd</DependentUpon>
+    </None>
+    <None Include="SeleFrm\DSKH.xsc">
+      <DependentUpon>DSKH.xsd</DependentUpon>
+    </None>
+    <None Include="SeleFrm\DSKH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSKH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SeleFrm\DSKH.xss">
+      <DependentUpon>DSKH.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\DHYYECX\DAJGCXDHYYE.xsc">
+      <DependentUpon>DAJGCXDHYYE.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\DHYYECX\DAJGCXDHYYE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DAJGCXDHYYE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\DHYYECX\DAJGCXDHYYE.xss">
+      <DependentUpon>DAJGCXDHYYE.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\FMS_DskDx\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FMS_DskDx\service.disco" />
+    <Content Include="ZYGL\Resources\Generated\Skins.Gizmox.WebGUI.Forms.SearchTextBox.Clear.gif" />
+    <Content Include="ZYGL\Resources\Generated\Skins.Gizmox.WebGUI.Forms.SearchTextBox.Search.gif" />
+    <Content Include="ZYGL\Resources\Icons\1.jpg" />
+    <Content Include="ZYGL\Resources\Icons\Actions\action_add.png" />
+    <Content Include="ZYGL\Resources\Icons\Actions\action_cancel.png" />
+    <Content Include="ZYGL\Resources\Icons\Actions\action_check.png" />
+    <Content Include="ZYGL\Resources\Icons\Actions\action_edit.png" />
+    <Content Include="ZYGL\Resources\Icons\Actions\action_remove.png" />
+    <Content Include="ZYGL\Resources\Icons\Actions\Book_open.png" />
+    <Content Include="ZYGL\Resources\Icons\Actions\New.png" />
+    <Content Include="ZYGL\Resources\Icons\action_add.png" />
+    <Content Include="ZYGL\Resources\Icons\action_cancel.png" />
+    <Content Include="ZYGL\Resources\Icons\action_check.png" />
+    <Content Include="ZYGL\Resources\Icons\award_star_gold_1.png" />
+    <Content Include="ZYGL\Resources\Icons\award_star_gold_2.png" />
+    <Content Include="ZYGL\Resources\Icons\award_star_gold_3.png" />
+    <Content Include="ZYGL\Resources\Icons\bin_closed.png" />
+    <Content Include="ZYGL\Resources\Icons\bullet_blue.png" />
+    <Content Include="ZYGL\Resources\Icons\bullet_green.png" />
+    <Content Include="ZYGL\Resources\Icons\bullet_white.png" />
+    <Content Include="ZYGL\Resources\Icons\bullet_yellow.png" />
+    <Content Include="ZYGL\Resources\Icons\car.png" />
+    <Content Include="ZYGL\Resources\Icons\ChangePass.png" />
+    <Content Include="ZYGL\Resources\Icons\ChangePass1.ico" />
+    <Content Include="ZYGL\Resources\Icons\delete.ico" />
+    <Content Include="ZYGL\Resources\Icons\down.png" />
+    <Content Include="ZYGL\Resources\Icons\Edit.png" />
+    <Content Include="ZYGL\Resources\Icons\Folders\folder_close_green16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\folder_close_green16a.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\folder_close_green16b.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\folder_close_yellow16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\folder_documents_yellow16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\folder_open_green16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\folder_open_yellow16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\Folder_yellow_close_16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\Folder_yellow_open_16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\WindowsForm_CS.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\WindowsForm_CS16.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\WindowsForm_CS16b.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\WindowsForm_CS16g.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\WindowsForm_CS16y.ico" />
+    <Content Include="ZYGL\Resources\Icons\Folders\WindowsForm_CSg.ico" />
+    <Content Include="ZYGL\Resources\Icons\greens.ico" />
+    <Content Include="ZYGL\Resources\Icons\key.png" />
+    <Content Include="ZYGL\Resources\Icons\Logout.png" />
+    <Content Include="ZYGL\Resources\Icons\MTools16.ico" />
+    <Content Include="ZYGL\Resources\Icons\New.ico" />
+    <Content Include="ZYGL\Resources\Icons\node\delivery.png" />
+    <Content Include="ZYGL\Resources\Icons\node\group.png" />
+    <Content Include="ZYGL\Resources\Icons\node\home.png" />
+    <Content Include="ZYGL\Resources\Icons\node\jiaose.ico" />
+    <Content Include="ZYGL\Resources\Icons\node\lightbulb.png" />
+    <Content Include="ZYGL\Resources\Icons\node\lightbulb_off.png" />
+    <Content Include="ZYGL\Resources\Icons\node\lightning.png" />
+    <Content Include="ZYGL\Resources\Icons\node\money2.ico" />
+    <Content Include="ZYGL\Resources\Icons\node\money_dollar.png" />
+    <Content Include="ZYGL\Resources\Icons\node\money_pound.png" />
+    <Content Include="ZYGL\Resources\Icons\node\money_yen.png" />
+    <Content Include="ZYGL\Resources\Icons\node\renyuan.ico" />
+    <Content Include="ZYGL\Resources\Icons\node\umbrella.png" />
+    <Content Include="ZYGL\Resources\Icons\node\user.png" />
+    <Content Include="ZYGL\Resources\Icons\node\user_business_boss.png" />
+    <Content Include="ZYGL\Resources\Icons\node\user_female.png" />
+    <Content Include="ZYGL\Resources\Icons\node\vcard.png" />
+    <Content Include="ZYGL\Resources\Icons\node\world.png" />
+    <Content Include="ZYGL\Resources\Icons\node\xingzheng.png" />
+    <Content Include="ZYGL\Resources\Icons\node\zone_money.png" />
+    <Content Include="ZYGL\Resources\Icons\none.ico" />
+    <Content Include="ZYGL\Resources\Icons\p.gif" />
+    <Content Include="ZYGL\Resources\Icons\progress.gif" />
+    <Content Include="ZYGL\Resources\Icons\refresh.gif" />
+    <Content Include="ZYGL\Resources\Icons\right.png" />
+    <Content Include="ZYGL\Resources\Icons\right_green.ico" />
+    <Content Include="ZYGL\Resources\Icons\SetDefPass.png" />
+    <Content Include="ZYGL\Resources\Icons\tool24.png" />
+    <Content Include="ZYGL\Resources\Icons\user.png" />
+    <Content Include="ZYGL\Resources\Icons\user_green.png" />
+    <Content Include="ZYGL\Resources\Images\background.bmp" />
+    <Content Include="ZYGL\Resources\Images\background.jpg" />
+    <Content Include="ZYGL\Resources\Images\cream.gif" />
+    <Content Include="ZYGL\Resources\Images\CreamColoredHThinLines0.gif" />
+    <Content Include="ZYGL\Resources\Images\jy.png" />
+    <Content Include="ZYGL\Resources\Images\LightYellowThinWaves.gif" />
+    <Content Include="ZYGL\Resources\Images\login - 副本.gif" />
+    <Content Include="ZYGL\Resources\Images\login.gif" />
+    <Content Include="ZYGL\Resources\Images\logo.jpg" />
+    <Content Include="ZYGL\Resources\Images\logo.png" />
+    <Content Include="ZYGL\Resources\Images\logo1.png" />
+    <Content Include="ZYGL\Resources\Images\logog.png" />
+    <Content Include="ZYGL\Resources\Images\top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CWGL\DataSets\DSXTWDR.cs">
+      <DependentUpon>DSXTWDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\DataSets\DSXTWDR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSXTWDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\DHWTHCX\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\DHYYECX\DAJGCXDHYYE.cs">
+      <DependentUpon>DAJGCXDHYYE.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\DHYYECX\DAJGCXDHYYE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DAJGCXDHYYE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\DHYYECX\FrmADHCXDHYYE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\DHYYECX\FrmADHCXDHYYE.Designer.cs">
+      <DependentUpon>FrmADHCXDHYYE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\FWKGBFCX\FrmFWKGBFCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\FWKGBFCX\FrmFWKGBFCX.Designer.cs">
+      <DependentUpon>FrmFWKGBFCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\GLSDWNWYYSR\DSGLSDWNWYYSR.cs">
+      <DependentUpon>DSGLSDWNWYYSR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\GLSDWNWYYSR\DSGLSDWNWYYSR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSGLSDWNWYYSR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\GLSDWNWYYSR\FrmGLSDWNWYYSR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\GLSDWNWYYSR\FrmGLSDWNWYYSR.Designer.cs">
+      <DependentUpon>FrmGLSDWNWYYSR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\GLSDWNWYYSR\FrmGLSDWNWYYSRXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\GLSDWNWYYSR\FrmGLSDWNWYYSRXX.Designer.cs">
+      <DependentUpon>FrmGLSDWNWYYSRXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\LSDWCKCX\FrmAJGCXDHYYE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\LSDWCKCX\FrmAJGCXDHYYE.Designer.cs">
+      <DependentUpon>FrmAJGCXDHYYE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\DHWTHCX\FrmDHWTHKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\DHWTHCX\FrmDHWTHKCX.Designer.cs">
+      <DependentUpon>FrmDHWTHKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\LSDWCKCX\DSLSDWCKCX.cs">
+      <DependentUpon>DSLSDWCKCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\LSDWCKCX\DSLSDWCKCX.Designer.cs">
+      <DependentUpon>DSLSDWCKCX.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CWGL\LSDWCKCX\FrmLSDWCKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\LSDWCKCX\FrmLSDWCKCX.Designer.cs">
+      <DependentUpon>FrmLSDWCKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\NHDR\DSNHDR.cs">
+      <DependentUpon>DSNHDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\NHDR\DSNHDR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSNHDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\NHDR\FrmYBFNH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\NHDR\FrmYBFNH.Designer.cs">
+      <DependentUpon>FrmYBFNH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\QRJKYBF\DSYBFQRJK.cs">
+      <DependentUpon>DSYBFQRJK.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\QRJKYBF\DSYBFQRJK.Designer.cs">
+      <DependentUpon>DSYBFQRJK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\QRJKYBF\FrmYbfqrjk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\QRJKYBF\FrmYbfqrjk.Designer.cs">
+      <DependentUpon>FrmYbfqrjk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\THDSK\FrmTHDSKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\THDSK\FrmTHDSKCX.Designer.cs">
+      <DependentUpon>FrmTHDSKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\THDSK\FrmTHDSKCXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\THDSK\FrmTHDSKCXMX.Designer.cs">
+      <DependentUpon>FrmTHDSKCXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\THTZQSMX\FrmTHTZQSMXCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\THTZQSMX\FrmTHTZQSMXCX.Designer.cs">
+      <DependentUpon>FrmTHTZQSMXCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\THYDCX\FrmTHYDCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\THYDCX\FrmTHYDCX.Designer.cs">
+      <DependentUpon>FrmTHYDCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWJHDR\FrmXTWJHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWJHDR\FrmXTWJHDR.Designer.cs">
+      <DependentUpon>FrmXTWJHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWNHDR\FrmDRMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWNHDR\FrmDRMX.Designer.cs">
+      <DependentUpon>FrmDRMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWNHDR\FrmXTWNHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWNHDR\FrmXTWNHDR.Designer.cs">
+      <DependentUpon>FrmXTWNHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\DSSP.cs">
+      <DependentUpon>DSSP.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\DSSP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXtspcx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXtspcx.Designer.cs">
+      <DependentUpon>FrmXtspcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXTSRSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXTSRSP.Designer.cs">
+      <DependentUpon>FrmXTSRSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXTSRSPMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXTSRSPMX.Designer.cs">
+      <DependentUpon>FrmXTSRSPMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXtwckqkcx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXtwckqkcx.Designer.cs">
+      <DependentUpon>FrmXtwckqkcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXTWSPMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSP\FrmXTWSPMX.Designer.cs">
+      <DependentUpon>FrmXTWSPMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\DSXtDKxz.cs">
+      <DependentUpon>DSXtDKxz.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\DSXtDKxz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSXtDKxz.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXtwDkcx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXtwDkcx.Designer.cs">
+      <DependentUpon>FrmXtwDkcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRCX.Designer.cs">
+      <DependentUpon>FrmXTWSRCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXtwsrcx2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXtwsrcx2.Designer.cs">
+      <DependentUpon>FrmXtwsrcx2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRSB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRSB.Designer.cs">
+      <DependentUpon>FrmXTWSRSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRSP.Designer.cs">
+      <DependentUpon>FrmXTWSRSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRSPMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRSPMX.Designer.cs">
+      <DependentUpon>FrmXTWSRSPMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\DSYBFDWKDR.cs">
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\DSYBFDWKDR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\FrmYBFDWKMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\FrmYBFDWKMX.Designer.cs">
+      <DependentUpon>FrmYBFDWKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\FrmYBFDWKNHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\FrmYBFDWKNHDR.Designer.cs">
+      <DependentUpon>FrmYBFDWKNHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\FrmYBFDWKZSDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFDWKDR\FrmYBFDWKZSDR.Designer.cs">
+      <DependentUpon>FrmYBFDWKZSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFJSXCX\DSYBF.cs">
+      <DependentUpon>DSYBF.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFJSXCX\DSYBF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYBF.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFJSXCX\FrmYBFCKJSXCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFJSXCX\FrmYBFCKJSXCX.Designer.cs">
+      <DependentUpon>FrmYBFCKJSXCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFJSXCX\FrmYBFCKJSXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFJSXCX\FrmYBFCKJSXMX.Designer.cs">
+      <DependentUpon>FrmYBFCKJSXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\ClsChecRows.cs" />
+    <Compile Include="CWGL\YBFNHDR\DSYBFDR.cs">
+      <DependentUpon>DSYBFDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\DSYBFDR.Designer.cs">
+      <DependentUpon>DSYBFDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\FrmYBFJHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\FrmYBFJHDR.Designer.cs">
+      <DependentUpon>FrmYBFJHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\FrmYBFNHMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\FrmYBFNHMX.Designer.cs">
+      <DependentUpon>FrmYBFNHMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\FrmYBNYHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFNHDR\FrmYBNYHDR.Designer.cs">
+      <DependentUpon>FrmYBNYHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFYQZLDK\DSYBFDK.cs">
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFYQZLDK\DSYBFDK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFYQZLDK\FrmJexg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFYQZLDK\FrmJexg.designer.cs">
+      <DependentUpon>FrmJexg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFYQZLDK\FrmYBFYQZLDK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFYQZLDK\FrmYBFYQZLDK.Designer.cs">
+      <DependentUpon>FrmYBFYQZLDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YBFZDDK\YBFDK\DSYBFDK.cs">
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFZDDK\YBFDK\DSYBFDK.Designer.cs">
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CWGL\YBFZDDK\YBFDK\FrmYBFDK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YBFZDDK\YBFDK\FrmYBFDK.Designer.cs">
+      <DependentUpon>FrmYBFDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YDTZFCX\DSXTSRCX.cs">
+      <DependentUpon>DSXTSRCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YDTZFCX\DSXTSRCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSXTSRCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YDTZFCX\FrmYDTZFCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YDTZFCX\FrmYDTZFCX.Designer.cs">
+      <DependentUpon>FrmYDTZFCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YQZLMM\FrmYBFYQZL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YQZLMM\FrmYBFYQZL.Designer.cs">
+      <DependentUpon>FrmYBFYQZL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YQZLMM\FrmYBFPWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YQZLMM\FrmYBFPWD.Designer.cs">
+      <DependentUpon>FrmYBFPWD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YSKCX2\FrmYSKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YSKCX2\FrmYSKCX.Designer.cs">
+      <DependentUpon>FrmYSKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\FrmYSKCX2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\FrmYSKCX2.Designer.cs">
+      <DependentUpon>FrmYSKCX2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\DSYSKCX.cs">
+      <DependentUpon>DSYSKCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\DSYSKCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYSKCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\FrmYCZW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\FrmYCZW.Designer.cs">
+      <DependentUpon>FrmYCZW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\FrmYSKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YSKCX\FrmYSKCX.Designer.cs">
+      <DependentUpon>FrmYSKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\FrmYYSRCX2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\FrmYYSRCX2.Designer.cs">
+      <DependentUpon>FrmYYSRCX2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\DSYYSRCX.cs">
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\DSYYSRCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\FrmYCZW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\FrmYCZW.Designer.cs">
+      <DependentUpon>FrmYCZW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\FrmYYSRCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRCX\FrmYYSRCX.Designer.cs">
+      <DependentUpon>FrmYYSRCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ2\DSXBYYSRCX.cs">
+      <DependentUpon>DSXBYYSRCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ2\DSXBYYSRCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSXBYYSRCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ2\FrmXbLsdSrTj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ2\FrmXbLsdSrTj.Designer.cs">
+      <DependentUpon>FrmXbLsdSrTj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ2\FrmXbYySrTj.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ2\FrmXbYySrTj.Designer.cs">
+      <DependentUpon>FrmXbYySrTj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\DSYYSRCX.cs">
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\DSYYSRCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\FrmLsdSrTj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\FrmLsdSrTj.Designer.cs">
+      <DependentUpon>FrmLsdSrTj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\FrmYdcx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\FrmYdcx.Designer.cs">
+      <DependentUpon>FrmYdcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\FrmYySrTj.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\YYSRTJ\FrmYySrTj.Designer.cs">
+      <DependentUpon>FrmYySrTj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZBJKRBCX\DSZBJKRBCX.cs">
+      <DependentUpon>DSZBJKRBCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZBJKRBCX\DSZBJKRBCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSZBJKRBCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZBJKRBCX\FrmZBJKRBCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZBJKRBCX\FrmZBJKRBCX.Designer.cs">
+      <DependentUpon>FrmZBJKRBCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRBCX\FrmJKRBCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRBCX\FrmJKRBCX.Designer.cs">
+      <DependentUpon>FrmJKRBCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRBCX\JKRBCX.cs">
+      <DependentUpon>JKRBCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRBCX\JKRBCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JKRBCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\DSJKRB.cs">
+      <DependentUpon>DSJKRB.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\DSJKRB.Designer.cs">
+      <DependentUpon>DSJKRB.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\FrmJKRB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\FrmJKRB.Designer.cs">
+      <DependentUpon>FrmJKRB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\FrmJKRBMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\FrmJKRBMX.Designer.cs">
+      <DependentUpon>FrmJKRBMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\FrmJkRBMXBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\JKRB\FrmJkRBMXBC.Designer.cs">
+      <DependentUpon>FrmJkRBMXBC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\QRJK\DSQRJK.cs">
+      <DependentUpon>DSQRJK.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\QRJK\DSQRJK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSQRJK.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\QRJK\FrmQRJK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\QRJK\FrmQRJK.Designer.cs">
+      <DependentUpon>FrmQRJK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\QRJK\FrmYbfXq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\QRJK\FrmYbfXq.Designer.cs">
+      <DependentUpon>FrmYbfXq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\ClsXtsr.cs" />
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\DSTFMSXTSR.cs">
+      <DependentUpon>DSTFMSXTSR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\DSTFMSXTSR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSTFMSXTSR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFBC.Designer.cs">
+      <DependentUpon>FrmTZFGBFBC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFJKMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFJKMX.Designer.cs">
+      <DependentUpon>FrmTZFGBFJKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFJKRB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFJKRB.Designer.cs">
+      <DependentUpon>FrmTZFGBFJKRB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DQJFFYYSRYB\DSDQJFFYYSRYB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDQJFFYYSRYB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DQJFFYYSRYB\FrmDQJFFYYSRYB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DQJFFYYSRYB\FrmDQJFFYYSRYB.Designer.cs">
+      <DependentUpon>FrmDQJFFYYSRYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\DSDSKCKJSXCX.cs">
+      <DependentUpon>DSDSKCKJSXCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\DSDSKCKJSXCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKCKJSXCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXCX.Designer.cs">
+      <DependentUpon>FrmDSKCKJSXCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXMX.Designer.cs">
+      <DependentUpon>FrmDSKCKJSXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXX.Designer.cs">
+      <DependentUpon>FrmDSKCKJSXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX\FrmDskCklMx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX\FrmDskCklMx.Designer.cs">
+      <DependentUpon>FrmDskCklMx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX\FrmDSKCKLSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX\FrmDSKCKLSelect.Designer.cs">
+      <DependentUpon>FrmDSKCKLSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX_FKFS\FrmDskCklMx_FKFS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX_FKFS\FrmDskCklMx_FKFS.Designer.cs">
+      <DependentUpon>FrmDskCklMx_FKFS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX_FKFS\FrmDSKCKLSelect_FKFS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKCKLCX_FKFS\FrmDSKCKLSelect_FKFS.Designer.cs">
+      <DependentUpon>FrmDSKCKLSelect_FKFS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGCX.Designer.cs">
+      <DependentUpon>FrmDSKFWKWGCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGCXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGCXMX.Designer.cs">
+      <DependentUpon>FrmDSKFWKWGCXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGYDMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGYDMX.Designer.cs">
+      <DependentUpon>FrmDSKFWKWGYDMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKHDCX\FrmDSKHDCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKHDCX\FrmDSKHDCX.designer.cs">
+      <DependentUpon>FrmDSKHDCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKQCCX\DSDSKQCCX.cs">
+      <DependentUpon>DSDSKQCCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKQCCX\DSDSKQCCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKQCCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\DSKQCCX\FrmDSKQCCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\DSKQCCX\FrmDSKQCCX.Designer.cs">
+      <DependentUpon>FrmDSKQCCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\JGYCKCX\DSJGYCKCX.cs">
+      <DependentUpon>DSJGYCKCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXTJ\JGYCKCX\DSJGYCKCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSJGYCKCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\JGYCKCX\FrmJGYCKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\JGYCKCX\FrmJGYCKCX.Designer.cs">
+      <DependentUpon>FrmJGYCKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\JGYSKCX\DSJgyskCx.cs">
+      <DependentUpon>DSJgyskCx.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXTJ\JGYSKCX\DSJgyskCx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSJgyskCx.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\JGYSKCX\FrmJGYSKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\JGYSKCX\FrmJGYSKCX.Designer.cs">
+      <DependentUpon>FrmJGYSKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\JGYSKCX\FrmJGYSKCXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\JGYSKCX\FrmJGYSKCXMX.Designer.cs">
+      <DependentUpon>FrmJGYSKCXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTHZ\DSSfthz.cs">
+      <DependentUpon>DSSfthz.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTHZ\DSSfthz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSfthz.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTHZ\FrmSFTDayDqHz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTHZ\FrmSFTDayDqHz.Designer.cs">
+      <DependentUpon>FrmSFTDayDqHz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTHZ\FrmSFTDayHz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTHZ\FrmSFTDayHz.Designer.cs">
+      <DependentUpon>FrmSFTDayHz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTYD\DSsftyd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSsftyd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTYD\FrmSftYd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SFTZFCX\SFTYD\FrmSftYd.Designer.cs">
+      <DependentUpon>FrmSftYd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\DSSRQKCX.cs">
+      <DependentUpon>DSSRQKCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\DSSRQKCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSSRQKCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXCP.Designer.cs">
+      <DependentUpon>FrmSRCXCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXDQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXDQ.Designer.cs">
+      <DependentUpon>FrmSRCXDQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXLSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXLSD.Designer.cs">
+      <DependentUpon>FrmSRCXLSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXLSZD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXLSZD.Designer.cs">
+      <DependentUpon>FrmSRCXLSZD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXYDXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRCXYDXX.Designer.cs">
+      <DependentUpon>FrmSRCXYDXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRQKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\SRQKCX\FrmSRQKCX.Designer.cs">
+      <DependentUpon>FrmSRQKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\DSWFKDSKCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSWFKDSKCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmLSDWFKDSK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmLSDWFKDSK.Designer.cs">
+      <DependentUpon>FrmLSDWFKDSK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmLsdWfkDsk1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmLsdWfkDsk1.Designer.cs">
+      <DependentUpon>FrmLsdWfkDsk1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmWFKDSKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmWFKDSKCX.Designer.cs">
+      <DependentUpon>FrmWFKDSKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmWfkDskCx1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmWfkDskCx1.Designer.cs">
+      <DependentUpon>FrmWfkDskCx1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmYDWFKDSK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmYDWFKDSK.Designer.cs">
+      <DependentUpon>FrmYDWFKDSK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmYdWfkDsk1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmYdWfkDsk1.Designer.cs">
+      <DependentUpon>FrmYdWfkDsk1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmLSDWFKDSK2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmLSDWFKDSK2.Designer.cs">
+      <DependentUpon>FrmLSDWFKDSK2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmWFKDSKCX2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmWFKDSKCX2.Designer.cs">
+      <DependentUpon>FrmWFKDSKCX2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmYDWFKDSK2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKDSKCX\FrmYDWFKDSK2.Designer.cs">
+      <DependentUpon>FrmYDWFKDSK2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKYBFCX\FrmLSDWFKYBF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKYBFCX\FrmLSDWFKYBF.Designer.cs">
+      <DependentUpon>FrmLSDWFKYBF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKYBFCX\FrmWFKYBFCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKYBFCX\FrmWFKYBFCX.Designer.cs">
+      <DependentUpon>FrmWFKYBFCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\WFKYBFCX\FrmYDWFKYBF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\WFKYBFCX\FrmYDWFKYBF.Designer.cs">
+      <DependentUpon>FrmYDWFKYBF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\ZBYCKCX\DSZBYCKCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSZBYCKCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\ZBYCKCX\FrmZBYSKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\ZBYCKCX\FrmZBYSKCX.Designer.cs">
+      <DependentUpon>FrmZBYSKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\Zjglsjhd\FrmZjglsjhd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\Zjglsjhd\FrmZjglsjhd.Designer.cs">
+      <DependentUpon>FrmZjglsjhd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\ZSFJHFCX\DsZsf_JhfCx.cs">
+      <DependentUpon>DsZsf_JhfCx.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CXTJ\ZSFJHFCX\DsZsf_JhfCx.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsZsf_JhfCx.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\ZSFJHFCX\FrmZSFJHFCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CXTJ\ZSFJHFCX\FrmZSFJHFCX.Designer.cs">
+      <DependentUpon>FrmZSFJHFCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CXTJ\ZSFJHFCX\FrmZSFJHFMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CXTJ\ZSFJHFCX\FrmZSFJHFMX.Designer.cs">
+      <DependentUpon>FrmZSFJHFMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\WYDSKFF\DSWYDSKFF.cs">
+      <DependentUpon>DSWYDSKFF.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\WYDSKFF\DSWYDSKFF.Designer.cs">
+      <DependentUpon>DSWYDSKFF.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\WYDSKFF\FrmWYDSKFF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\WYDSKFF\FrmWYDSKFF.Designer.cs">
+      <DependentUpon>FrmWYDSKFF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\WYDSKFF\FrmWYDSKFFMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\WYDSKFF\FrmWYDSKFFMX.Designer.cs">
+      <DependentUpon>FrmWYDSKFFMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFFFH\DSYQZLFFFH.cs">
+      <DependentUpon>DSYQZLFFFH.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFFFH\DSYQZLFFFH.Designer.cs">
+      <DependentUpon>DSYQZLFFFH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFFFH\FrmYQZLFFFH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFFFH\FrmYQZLFFFH.Designer.cs">
+      <DependentUpon>FrmYQZLFFFH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFFFH\FrmYQZLFHMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFFFH\FrmYQZLFHMX.Designer.cs">
+      <DependentUpon>FrmYQZLFHMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFF\DSYQZLDSKFF.cs">
+      <DependentUpon>DSYQZLDSKFF.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFF\DSYQZLDSKFF.Designer.cs">
+      <DependentUpon>DSYQZLDSKFF.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFF\FrmYQZLDSKFF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFF\FrmYQZLDSKFF.Designer.cs">
+      <DependentUpon>FrmYQZLDSKFF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFF\FrmYQZLDSKFFMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLDSKFF\FrmYQZLDSKFFMX.Designer.cs">
+      <DependentUpon>FrmYQZLDSKFFMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLFFCX\DSYQZLCX.cs">
+      <DependentUpon>DSYQZLCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLFFCX\DSYQZLCX.Designer.cs">
+      <DependentUpon>DSYQZLCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLFFCX\Frmyqzlffcx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLFFCX\Frmyqzlffcx.Designer.cs">
+      <DependentUpon>Frmyqzlffcx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLFFCX\FrmYqzlffcxmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCKFF\YQZLFFCX\FrmYqzlffcxmx.Designer.cs">
+      <DependentUpon>FrmYqzlffcxmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKHZB\DSKHZB.cs">
+      <DependentUpon>DSKHZB.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKHZB\DSKHZB.Designer.cs">
+      <DependentUpon>DSKHZB.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKHZB\FrmDSKHZB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKHZB\FrmDSKHZB.Designer.cs">
+      <DependentUpon>FrmDSKHZB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKHZB\FrmDSKHZBXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKHZB\FrmDSKHZBXX.Designer.cs">
+      <DependentUpon>FrmDSKHZBXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKPMCX\DSDSKPMMX.cs">
+      <DependentUpon>DSDSKPMMX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKPMCX\DSDSKPMMX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKPMMX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKPMCX\FrmDSKPMCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKPMCX\FrmDSKPMCX.Designer.cs">
+      <DependentUpon>FrmDSKPMCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKPMCX\FrmDSKPMMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKCX\DSKPMCX\FrmDSKPMMX.Designer.cs">
+      <DependentUpon>FrmDSKPMMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKCGCX\FrmDSKDKCGCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKCGCX\FrmDSKDKCGCX.Designer.cs">
+      <DependentUpon>FrmDSKDKCGCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKCX\DSDSKDKCX.cs">
+      <DependentUpon>DSDSKDKCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKCX\DSDSKDKCX.Designer.cs">
+      <DependentUpon>DSDSKDKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKCX\FrmDSKDKCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKCX\FrmDSKDKCX.Designer.cs">
+      <DependentUpon>FrmDSKDKCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKFS\DSDSKDKFS.cs">
+      <DependentUpon>DSDSKDKFS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKFS\DSDSKDKFS.Designer.cs">
+      <DependentUpon>DSDSKDKFS.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKFS\FrmDSKDFFS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKFS\FrmDSKDFFS.Designer.cs">
+      <DependentUpon>FrmDSKDFFS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKJSL\Frmdqxx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKJSL\Frmdqxx.Designer.cs">
+      <DependentUpon>Frmdqxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKJSL\FrmDSKDKJSL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKJSL\FrmDSKDKJSL.Designer.cs">
+      <DependentUpon>FrmDSKDKJSL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKJSL\FrmJgxx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDKJSL\FrmJgxx.Designer.cs">
+      <DependentUpon>FrmJgxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\DSDSKDK.cs">
+      <DependentUpon>DSDSKDK.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\DSDSKDK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKDK.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\FrmDSKDK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\FrmDSKDK.Designer.cs">
+      <DependentUpon>FrmDSKDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\FrmJexg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\FrmJexg.designer.cs">
+      <DependentUpon>FrmJexg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\FrmPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDK\FrmPwd.Designer.cs">
+      <DependentUpon>FrmPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\DSDSKDWKDR.cs">
+      <DependentUpon>DSDSKDWKDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\DSDSKDWKDR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKDWKDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\DSYBFDWKDR.cs">
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\DSYBFDWKDR1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYBFDWKDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKMX.Designer.cs">
+      <DependentUpon>FrmDSKDWKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKNHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKNHDR.Designer.cs">
+      <DependentUpon>FrmDSKDWKNHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKZSDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKZSDR.Designer.cs">
+      <DependentUpon>FrmDSKDWKZSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKEWMZFDR\DSDKSEWMZFDR.cs">
+      <DependentUpon>DSDKSEWMZFDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKEWMZFDR\DSDKSEWMZFDR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDKSEWMZFDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKEWMZFDR\FrmDSKEWMDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKEWMZFDR\FrmDSKEWMDR.Designer.cs">
+      <DependentUpon>FrmDSKEWMDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKEWMZFXZ\FrmDSKEWMZFXZ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKEWMZFXZ\FrmDSKEWMZFXZ.Designer.cs">
+      <DependentUpon>FrmDSKEWMZFXZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFCGCX\DSDSKFFCGCX.cs">
+      <DependentUpon>DSDSKFFCGCX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFCGCX\DSDSKFFCGCX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKFFCGCX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFCGCX\FrmDSKFFCGCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFCGCX\FrmDSKFFCGCX.Designer.cs">
+      <DependentUpon>FrmDSKFFCGCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFSJ\DSDSKFFSJ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKFFSJ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFSJ\FrmDskffsj.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFSJ\FrmDskffsj.Designer.cs">
+      <DependentUpon>FrmDskffsj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFSJ\FrmDskffsjmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFSJ\FrmDskffsjmx.Designer.cs">
+      <DependentUpon>FrmDskffsjmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFSJ\FrmSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKFFSJ\FrmSort.Designer.cs">
+      <DependentUpon>FrmSort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKJJ\DSDSKJJ.cs">
+      <DependentUpon>DSDSKJJ.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKJJ\DSDSKJJ1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKJJ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKJJ\FrmDSKJJ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKJJ\FrmDSKJJ.Designer.cs">
+      <DependentUpon>FrmDSKJJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKJKRB\QRYCMX\FrmQRYCDSKMX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKJKRB\QRYCMX\FrmQRYCDSKMX.Designer.cs">
+      <DependentUpon>FrmQRYCDSKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKJKRB\ZZYCMX\FrmZZYCDSKMX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKJKRB\ZZYCMX\FrmZZYCDSKMX.Designer.cs">
+      <DependentUpon>FrmZZYCDSKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKJKRB\ZZYCMX\FrmZZYCDSKTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKJKRB\ZZYCMX\FrmZZYCDSKTJ.Designer.cs">
+      <DependentUpon>FrmZZYCDSKTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKJSD\FrmDSKJSD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKJSD\FrmDSKJSD.Designer.cs">
+      <DependentUpon>FrmDSKJSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHFLWH\DSDSKKHFLWH.cs">
+      <DependentUpon>DSDSKKHFLWH.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHFLWH\DSDSKKHFLWH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKKHFLWH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHFLWH\FrmDSKKHFLWH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHFLWH\FrmDSKKHFLWH.Designer.cs">
+      <DependentUpon>FrmDSKKHFLWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHFLWH\FrmKHFLBJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHFLWH\FrmKHFLBJ.Designer.cs">
+      <DependentUpon>FrmKHFLBJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHTZ\DSDSKKHZT.cs">
+      <DependentUpon>DSDSKKHZT.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHTZ\DSDSKKHZT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKKHZT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHTZ\FrmDSKKHTZ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHTZ\FrmDSKKHTZ.Designer.cs">
+      <DependentUpon>FrmDSKKHTZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHTZ\FrmDSKKHXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKKHTZ\FrmDSKKHXX.Designer.cs">
+      <DependentUpon>FrmDSKKHXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPD\FrmDSKPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPD\FrmDSKPD.Designer.cs">
+      <DependentUpon>FrmDSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSDR\DSDSKPLPOS.cs">
+      <DependentUpon>DSDSKPLPOS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSDR\DSDSKPLPOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKPLPOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSDR\FrmPLPOSDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSDR\FrmPLPOSDR.Designer.cs">
+      <DependentUpon>FrmPLPOSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSFA\DSPOSFA.cs">
+      <DependentUpon>DSPOSFA.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSFA\DSPOSFA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPOSFA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSFA\FrmPOSDSKFA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOSFA\FrmPOSDSKFA.Designer.cs">
+      <DependentUpon>FrmPOSDSKFA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOS\DSDSKPOS.cs">
+      <DependentUpon>DSDSKPOS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOS\DSDSKPOS.Designer.cs">
+      <DependentUpon>DSDSKPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOS\FrmPOSDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOS\FrmPOSDR.Designer.cs">
+      <DependentUpon>FrmPOSDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOS\FrmPOSMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKPOS\FrmPOSMX.Designer.cs">
+      <DependentUpon>FrmPOSMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKQSCX\Frmdskqscx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKQSCX\Frmdskqscx.Designer.cs">
+      <DependentUpon>Frmdskqscx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKQSCX\Frmdskqsmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKQSCX\Frmdskqsmx.Designer.cs">
+      <DependentUpon>Frmdskqsmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKSFTHZ\DSDskhz.cs">
+      <DependentUpon>DSDskhz.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKSFTHZ\DSDskhz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDskhz.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKSFTHZ\FrmDSKSftHz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKSFTHZ\FrmDSKSftHz.Designer.cs">
+      <DependentUpon>FrmDSKSftHz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKSFTHZ\FrmDSksftmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKSFTHZ\FrmDSksftmx.Designer.cs">
+      <DependentUpon>FrmDSksftmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKSXFFL\DSDSKSXFFL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKSXFFL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKSXFFL\FrmDSKSXFFLMXNEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKSXFFL\FrmDSKSXFFLMXNEW.Designer.cs">
+      <DependentUpon>FrmDSKSXFFLMXNEW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKSXFFL\FrmDSKSXFFLMXWH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKSXFFL\FrmDSKSXFFLMXWH.Designer.cs">
+      <DependentUpon>FrmDSKSXFFLMXWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKSXFFL\FrmDSKSXFFLWH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKSXFFL\FrmDSKSXFFLWH.Designer.cs">
+      <DependentUpon>FrmDSKSXFFLWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYCDKHZ\DSDSKYCHZ.cs">
+      <DependentUpon>DSDSKYCHZ.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYCDKHZ\DSDSKYCHZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKYCHZ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYCDKHZ\FrmDSKFFYCMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYCDKHZ\FrmDSKFFYCMX.Designer.cs">
+      <DependentUpon>FrmDSKFFYCMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYCDKHZ\FrmDSKYCHZ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYCDKHZ\FrmDSKYCHZ.Designer.cs">
+      <DependentUpon>FrmDSKYCHZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\ClsCheckAYDRows.cs" />
+    <Compile Include="DSKGL\DSKYHDR\DSYHDR.cs">
+      <DependentUpon>DSYHDR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\DSYHDR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYHDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmJHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmJHDR.Designer.cs">
+      <DependentUpon>FrmJHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmJHMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmJHMX.Designer.cs">
+      <DependentUpon>FrmJHMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmYHDR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmYHDR.Designer.cs">
+      <DependentUpon>FrmYHDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmYHMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYHDR\FrmYHMX.Designer.cs">
+      <DependentUpon>FrmYHMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKYKGL\DSDSKYK.cs">
+      <DependentUpon>DSDSKYK.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYKGL\DSDSKYK.Designer.cs">
+      <DependentUpon>DSDSKYK.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\DSKYKGL\FrmDSKYKGL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKYKGL\FrmDSKYKGL.Designer.cs">
+      <DependentUpon>FrmDSKYKGL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\DSDSKZZ.cs">
+      <DependentUpon>DSDSKZZ.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\DSDSKZZ.Designer.cs">
+      <DependentUpon>DSDSKZZ.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\DSDSKZZNEW.cs">
+      <DependentUpon>DSDSKZZNEW.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\DSDSKZZNEW.Designer.cs">
+      <DependentUpon>DSDSKZZNEW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\FrmDSKZZ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\FrmDSKZZ.Designer.cs">
+      <DependentUpon>FrmDSKZZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\FrmDSKZZNEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\FrmDSKZZNEW.Designer.cs">
+      <DependentUpon>FrmDSKZZNEW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\FrmNewDSKZZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\DSKZZ\FrmNewDSKZZ.Designer.cs">
+      <DependentUpon>FrmNewDSKZZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\Dxtz\DsDxtz.cs">
+      <DependentUpon>DsDxtz.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\Dxtz\DsDxtz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsDxtz.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\Dxtz\FrmDskDxtz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\Dxtz\FrmDskDxtz.Designer.cs">
+      <DependentUpon>FrmDskDxtz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\DSFBDSKHZ.cs">
+      <DependentUpon>DSFBDSKHZ.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\DSFBDSKHZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSFBDSKHZ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\FrmDSKXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\FrmDSKXX.Designer.cs">
+      <DependentUpon>FrmDSKXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\FrmFBDSKHZ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\FrmFBDSKHZ.Designer.cs">
+      <DependentUpon>FrmFBDSKHZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\FrmZBDSKHZXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\FBDSKHZ\FrmZBDSKHZXX.Designer.cs">
+      <DependentUpon>FrmZBDSKHZXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\LSDDZD\DSLSDDZD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSLSDDZD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\LSDDZD\FrmLSDDZD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\LSDDZD\FrmLSDDZD.Designer.cs">
+      <DependentUpon>FrmLSDDZD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\LSDDZD\FrmLSDDZDMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\LSDDZD\FrmLSDDZDMX.Designer.cs">
+      <DependentUpon>FrmLSDDZDMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\QRYCDSKMX\DSQRYCDSK.cs">
+      <DependentUpon>DSQRYCDSK.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\QRYCDSKMX\DSQRYCDSK.Designer.cs">
+      <DependentUpon>DSQRYCDSK.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\QRYCDSKMX\FrmQRYCDSKMX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\QRYCDSKMX\FrmQRYCDSKMX.designer.cs">
+      <DependentUpon>FrmQRYCDSKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\QRYCDSKMX\FrmQRYCDSKMXLL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\QRYCDSKMX\FrmQRYCDSKMXLL.Designer.cs">
+      <DependentUpon>FrmQRYCDSKMXLL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\DSYDTH.cs">
+      <DependentUpon>DSYDTH.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\DSYDTH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYDTH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\FrmDSKTHCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\FrmDSKTHCX.Designer.cs">
+      <DependentUpon>FrmDSKTHCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\FrmDSKTHCXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\FrmDSKTHCXMX.Designer.cs">
+      <DependentUpon>FrmDSKTHCXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\FrmThDsk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\THBJ\FrmThDsk.Designer.cs">
+      <DependentUpon>FrmThDsk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\WYFFYCCL\DSWYFFYC.cs">
+      <DependentUpon>DSWYFFYC.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\WYFFYCCL\DSWYFFYC.Designer.cs">
+      <DependentUpon>DSWYFFYC.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\WYFFYCCL\FrmWYFFYCCL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\WYFFYCCL\FrmWYFFYCCL.Designer.cs">
+      <DependentUpon>FrmWYFFYCCL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\YFLSDZJ\FrmInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\YFLSDZJ\FrmInsert.Designer.cs">
+      <DependentUpon>FrmInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\YFLSDZJ\FrmYfLsdZjLr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\YFLSDZJ\FrmYfLsdZjLr.Designer.cs">
+      <DependentUpon>FrmYfLsdZjLr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKFF\DSZBDSKFF.cs">
+      <DependentUpon>DSZBDSKFF.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKFF\DSZBDSKFF.Designer.cs">
+      <DependentUpon>DSZBDSKFF.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKFF\FrmZBDSKFF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKFF\FrmZBDSKFF.Designer.cs">
+      <DependentUpon>FrmZBDSKFF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\DSZBDSKHZ.cs">
+      <DependentUpon>DSZBDSKHZ.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\DSZBDSKHZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSZBDSKHZ.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\FrmDSKMXCX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\FrmDSKMXCX.Designer.cs">
+      <DependentUpon>FrmDSKMXCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\FrmDSKWFFMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\FrmDSKWFFMX.Designer.cs">
+      <DependentUpon>FrmDSKWFFMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\FrmZBDSKHZ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZBDSKHZ\FrmZBDSKHZ.Designer.cs">
+      <DependentUpon>FrmZBDSKHZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\DSZZYCMX.cs">
+      <DependentUpon>DSZZYCMX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\DSZZYCMX.Designer.cs">
+      <DependentUpon>DSZZYCMX.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\FrmDSKRBLL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\FrmDSKRBLL.Designer.cs">
+      <DependentUpon>FrmDSKRBLL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\FrmZZYCDSKMX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\FrmZZYCDSKMX.designer.cs">
+      <DependentUpon>FrmZZYCDSKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\FrmZZYCDSKTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSKGL\ZZYCDSKMX\FrmZZYCDSKTJ.designer.cs">
+      <DependentUpon>FrmZZYCDSKTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\DQXX\DSQSXX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSQSXX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\DQXX\FrmDQXX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JCSJ\DQXX\FrmDQXX.Designer.cs">
+      <DependentUpon>FrmDQXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\DQXX\FrmDQXXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JCSJ\DQXX\FrmDQXXMX.Designer.cs">
+      <DependentUpon>FrmDQXXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\POSBh\DSAJGCX1.cs">
+      <DependentUpon>DSAJGCX1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JCSJ\POSBh\DSAJGCX1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAJGCX1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\POSBh\FrmAJGCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JCSJ\POSBh\FrmAJGCX.Designer.cs">
+      <DependentUpon>FrmAJGCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\POSBh\FrmPOSBHTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JCSJ\POSBh\FrmPOSBHTJ.Designer.cs">
+      <DependentUpon>FrmPOSBHTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\SXFFL\DSDSKSXFFL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSDSKSXFFL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\SXFFL\FrmDSKSXFFL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JCSJ\SXFFL\FrmDSKSXFFL.Designer.cs">
+      <DependentUpon>FrmDSKSXFFL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\SXFFL\FrmDSKSXFFLMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JCSJ\SXFFL\FrmDSKSXFFLMX.Designer.cs">
+      <DependentUpon>FrmDSKSXFFLMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\WDXXWH\DSWDXX.cs">
+      <DependentUpon>DSWDXX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JCSJ\WDXXWH\DSWDXX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSWDXX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\YHZHWH\DSYHZHWH.cs">
+      <DependentUpon>DSYHZHWH.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JCSJ\YHZHWH\DSYHZHWH.Designer.cs">
+      <DependentUpon>DSYHZHWH.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="JCSJ\YHZHWH\FrmNewYHZH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JCSJ\YHZHWH\FrmNewYHZH.Designer.cs">
+      <DependentUpon>FrmNewYHZH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\YHZHWH\FrmYHZHWH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JCSJ\YHZHWH\FrmYHZHWH.Designer.cs">
+      <DependentUpon>FrmYHZHWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\ZHLXGL\DSZHLXGL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSZHLXGL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\ZHLXGL\FrmNewZhlx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JCSJ\ZHLXGL\FrmNewZhlx.Designer.cs">
+      <DependentUpon>FrmNewZhlx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\ZHLXGL\FrmZHLXGL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JCSJ\ZHLXGL\FrmZHLXGL.Designer.cs">
+      <DependentUpon>FrmZHLXGL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\CYJGJS\DSYJKHZD.cs">
+      <DependentUpon>DSYJKHZD.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JSGL\CYJGJS\DSYJKHZD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYJKHZD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\CYJGJS\FrmYJKHZD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JSGL\CYJGJS\FrmYJKHZD.Designer.cs">
+      <DependentUpon>FrmYJKHZD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\KHJS\DSKHJS.cs">
+      <DependentUpon>DSKHJS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JSGL\KHJS\DSKHJS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSKHJS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSDel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSDel.designer.cs">
+      <DependentUpon>FrmKHJSDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSXQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSXQ.Designer.cs">
+      <DependentUpon>FrmKHJSXQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSXX.Designer.cs">
+      <DependentUpon>FrmKHJSXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHZJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHZJ.Designer.cs">
+      <DependentUpon>FrmKHZJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSDLL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHJSDLL.Designer.cs">
+      <DependentUpon>FrmKHJSDLL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHZJUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JSGL\KHJS\FrmKHZJUp.designer.cs">
+      <DependentUpon>FrmKHZJUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\DSJG.cs">
+      <DependentUpon>DSJG.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\DSJG.Designer.cs">
+      <DependentUpon>DSJG.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="SeleFrm\DSKH.cs">
+      <DependentUpon>DSKH.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\DSKH.Designer.cs">
+      <DependentUpon>DSKH.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectDq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectDq.Designer.cs">
+      <DependentUpon>FrmSelectDq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg.Designer.cs">
+      <DependentUpon>FrmSelectJg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg1.Designer.cs">
+      <DependentUpon>FrmSelectJg1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg2.designer.cs">
+      <DependentUpon>FrmSelectJg2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg3.designer.cs">
+      <DependentUpon>FrmSelectJg3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectJg4.designer.cs">
+      <DependentUpon>FrmSelectJg4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectKh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectKh.Designer.cs">
+      <DependentUpon>FrmSelectKh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectKh1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleFrm\FrmSelectKh1.Designer.cs">
+      <DependentUpon>FrmSelectKh1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\WDXXWH\FrmWDXX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JCSJ\WDXXWH\FrmWDXX.Designer.cs">
+      <DependentUpon>FrmWDXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JCSJ\WDXXWH\FrmWDXXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JCSJ\WDXXWH\FrmWDXXMX.Designer.cs">
+      <DependentUpon>FrmWDXXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FMS_DskDx\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="ZJGL\ZHCX\FrmZHCX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZJGL\ZHCX\FrmZHCX.Designer.cs">
+      <DependentUpon>FrmZHCX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\JGGXWH\DSJGGXWH.cs">
+      <DependentUpon>DSJGGXWH.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZYGL\JGGXWH\DSJGGXWH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSJGGXWH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\JGGXWH\FrmJGGXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\JGGXWH\FrmJGGXMX.Designer.cs">
+      <DependentUpon>FrmJGGXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\JGGXWH\FrmJGGXWH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\JGGXWH\FrmJGGXWH.Designer.cs">
+      <DependentUpon>FrmJGGXWH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\JYLXWH\DSJYLXWH.Designer.cs" />
+    <Compile Include="ZYGL\JYLXWH\FrmJylxwh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\JYLXWH\FrmJylxwh.Designer.cs">
+      <DependentUpon>FrmJylxwh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\JYLXWH\FrmJylxwhmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\JYLXWH\FrmJylxwhmx.Designer.cs">
+      <DependentUpon>FrmJylxwhmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\JYLXWH\FrmSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\JYLXWH\FrmSort.Designer.cs">
+      <DependentUpon>FrmSort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\POSBMWH\DSPOSWH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPOSWH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\POSBMWH\FrmPosBmwh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\POSBMWH\FrmPosBmwh.Designer.cs">
+      <DependentUpon>FrmPosBmwh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\POSBMWH\FrmPosWHMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\POSBMWH\FrmPosWHMX.Designer.cs">
+      <DependentUpon>FrmPosWHMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\DSXTWSR.cs">
+      <DependentUpon>DSXTWSR.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\DSXTWSR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSXTWSR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\XTWSRLX\DSXTWSRLX.cs">
+      <DependentUpon>DSXTWSRLX.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZYGL\XTWSRLX\DSXTWSRLX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSXTWSRLX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\XTWSRLX\FrmXTWSRLX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\XTWSRLX\FrmXTWSRLX.Designer.cs">
+      <DependentUpon>FrmXTWSRLX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\XTWSRLX\FrmXTWSRLXMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\XTWSRLX\FrmXTWSRLXMX.Designer.cs">
+      <DependentUpon>FrmXTWSRLXMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CWGL\XTWSR\FrmXTWSRMX.Designer.cs">
+      <DependentUpon>FrmXTWSRMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\YQZLPWD\DSJGGL1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSJGGL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\YQZLPWD\FrmYQZL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\YQZLPWD\FrmYQZL.Designer.cs">
+      <DependentUpon>FrmYQZL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\YQZLPWD\FrmYQZLPWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\YQZLPWD\FrmYQZLPWD.Designer.cs">
+      <DependentUpon>FrmYQZLPWD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\DSSGDB.cs">
+      <DependentUpon>DSSGDB.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\DSSGDB.Designer.cs">
+      <DependentUpon>DSSGDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\FrmSelectYh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\FrmSelectYh.Designer.cs">
+      <DependentUpon>FrmSelectYh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\FrmSgdb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\FrmSgdb.Designer.cs">
+      <DependentUpon>FrmSgdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\FrmSGDBMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\SGDB\FrmSGDBMX.Designer.cs">
+      <DependentUpon>FrmSGDBMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\DSYQZL.cs">
+      <DependentUpon>DSYQZL.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\DSYQZL1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSYQZL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmDPXX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmDPXX.Designer.cs">
+      <DependentUpon>FrmDPXX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmJe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmJe.Designer.cs">
+      <DependentUpon>FrmJe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmPwd2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmPwd2.designer.cs">
+      <DependentUpon>FrmPwd2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmYQZLDB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmYQZLDB.Designer.cs">
+      <DependentUpon>FrmYQZLDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmYQZLFH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmYQZLFH.Designer.cs">
+      <DependentUpon>FrmYQZLFH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmZz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmZz.Designer.cs">
+      <DependentUpon>FrmZz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmZzCz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZYGL\ZJDB\YQZLDP\FrmZzCz.Designer.cs">
+      <DependentUpon>FrmZzCz.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CWGL\NHDR\DSNHDR.xsc">
+      <DependentUpon>DSNHDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\NHDR\DSNHDR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSNHDR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\NHDR\DSNHDR.xss">
+      <DependentUpon>DSNHDR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFYQZLDK\DSYBFDK.xsc">
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFYQZLDK\DSYBFDK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYBFDK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\YBFYQZLDK\DSYBFDK.xss">
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFZDDK\YBFDK\DSYBFDK.xsc">
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YBFZDDK\YBFDK\DSYBFDK.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYBFDK.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CWGL\YBFZDDK\YBFDK\DSYBFDK.xss">
+      <DependentUpon>DSYBFDK.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YSKCX\DSYSKCX.xsc">
+      <DependentUpon>DSYSKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YSKCX\DSYSKCX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYSKCX.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CWGL\YSKCX\DSYSKCX.xss">
+      <DependentUpon>DSYSKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YYSRCX\DSYYSRCX.xsc">
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YYSRCX\DSYYSRCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYYSRCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\YYSRCX\DSYYSRCX.xss">
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YYSRTJ\DSYYSRCX.xsc">
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\YYSRTJ\DSYYSRCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYYSRCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\YYSRTJ\DSYYSRCX.xss">
+      <DependentUpon>DSYYSRCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZBJKRBCX\DSZBJKRBCX.xsc">
+      <DependentUpon>DSZBJKRBCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZBJKRBCX\DSZBJKRBCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSZBJKRBCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\ZBJKRBCX\DSZBJKRBCX.xss">
+      <DependentUpon>DSZBJKRBCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\JKRBCX\JKRBCX.xsc">
+      <DependentUpon>JKRBCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\JKRBCX\JKRBCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JKRBCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\JKRBCX\JKRBCX.xss">
+      <DependentUpon>JKRBCX.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\JKRB\DSJKRB.xsc">
+      <DependentUpon>DSJKRB.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\JKRB\DSJKRB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSJKRB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\JKRB\DSJKRB.xss">
+      <DependentUpon>DSJKRB.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\QRJK\DSQRJK.xsc">
+      <DependentUpon>DSQRJK.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\QRJK\DSQRJK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSQRJK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\ZZHQRJKD\QRJK\DSQRJK.xss">
+      <DependentUpon>DSQRJK.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\DQJFFYYSRYB\DSDQJFFYYSRYB.xsc">
+      <DependentUpon>DSDQJFFYYSRYB.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\DQJFFYYSRYB\DSDQJFFYYSRYB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDQJFFYYSRYB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\DQJFFYYSRYB\DSDQJFFYYSRYB.xss">
+      <DependentUpon>DSDQJFFYYSRYB.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\DSKCKJSXCX\DSDSKCKJSXCX.xsc">
+      <DependentUpon>DSDSKCKJSXCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\DSKCKJSXCX\DSDSKCKJSXCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKCKJSXCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\DSKCKJSXCX\DSDSKCKJSXCX.xss">
+      <DependentUpon>DSDSKCKJSXCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\JGYCKCX\DSJGYCKCX.xsc">
+      <DependentUpon>DSJGYCKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\JGYCKCX\DSJGYCKCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSJGYCKCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\JGYCKCX\DSJGYCKCX.xss">
+      <DependentUpon>DSJGYCKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\JGYSKCX\DSJgyskCx.xsc">
+      <DependentUpon>DSJgyskCx.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\JGYSKCX\DSJgyskCx.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSJgyskCx.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\JGYSKCX\DSJgyskCx.xss">
+      <DependentUpon>DSJgyskCx.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\SRQKCX\DSSRQKCX.xsc">
+      <DependentUpon>DSSRQKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\SRQKCX\DSSRQKCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSRQKCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\SRQKCX\DSSRQKCX.xss">
+      <DependentUpon>DSSRQKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\WFKDSKCX\DSWFKDSKCX.xsc">
+      <DependentUpon>DSWFKDSKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\WFKDSKCX\DSWFKDSKCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSWFKDSKCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\WFKDSKCX\DSWFKDSKCX.xss">
+      <DependentUpon>DSWFKDSKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\ZBYCKCX\DSZBYCKCX.xsc">
+      <DependentUpon>DSZBYCKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\ZBYCKCX\DSZBYCKCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSZBYCKCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\ZBYCKCX\DSZBYCKCX.xss">
+      <DependentUpon>DSZBYCKCX.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\ZSFJHFCX\DsZsf_JhfCx.xsc">
+      <DependentUpon>DsZsf_JhfCx.xsd</DependentUpon>
+    </None>
+    <None Include="CXTJ\ZSFJHFCX\DsZsf_JhfCx.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsZsf_JhfCx.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CXTJ\ZSFJHFCX\DsZsf_JhfCx.xss">
+      <DependentUpon>DsZsf_JhfCx.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\WYDSKFF\DSWYDSKFF.xsc">
+      <DependentUpon>DSWYDSKFF.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\WYDSKFF\DSWYDSKFF.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSWYDSKFF.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKCKFF\WYDSKFF\DSWYDSKFF.xss">
+      <DependentUpon>DSWYDSKFF.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLDSKFFFH\DSYQZLFFFH.xsc">
+      <DependentUpon>DSYQZLFFFH.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLDSKFFFH\DSYQZLFFFH.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYQZLFFFH1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLDSKFFFH\DSYQZLFFFH.xss">
+      <DependentUpon>DSYQZLFFFH.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLDSKFF\DSYQZLDSKFF.xsc">
+      <DependentUpon>DSYQZLDSKFF.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLDSKFF\DSYQZLDSKFF.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYQZLDSKFF.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLDSKFF\DSYQZLDSKFF.xss">
+      <DependentUpon>DSYQZLDSKFF.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLFFCX\DSYQZLCX.xsc">
+      <DependentUpon>DSYQZLCX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLFFCX\DSYQZLCX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYQZLCX1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKCKFF\YQZLFFCX\DSYQZLCX.xss">
+      <DependentUpon>DSYQZLCX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCX\DSKHZB\DSKHZB.xsc">
+      <DependentUpon>DSKHZB.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCX\DSKHZB\DSKHZB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSKHZB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKCX\DSKHZB\DSKHZB.xss">
+      <DependentUpon>DSKHZB.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCX\DSKPMCX\DSDSKPMMX.xsc">
+      <DependentUpon>DSDSKPMMX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKCX\DSKPMCX\DSDSKPMMX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKPMMX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKCX\DSKPMCX\DSDSKPMMX.xss">
+      <DependentUpon>DSDSKPMMX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDKCX\DSDSKDKCX.xsc">
+      <DependentUpon>DSDSKDKCX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDKCX\DSDSKDKCX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKDKCX1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKDKCX\DSDSKDKCX.xss">
+      <DependentUpon>DSDSKDKCX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDKFS\DSDSKDKFS.xsc">
+      <DependentUpon>DSDSKDKFS.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDKFS\DSDSKDKFS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKDKFS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKDKFS\DSDSKDKFS.xss">
+      <DependentUpon>DSDSKDKFS.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDK\DSDSKDK.xsc">
+      <DependentUpon>DSDSKDK.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKDK\DSDSKDK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKDK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKDK\DSDSKDK.xss">
+      <DependentUpon>DSDSKDK.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKFFCGCX\DSDSKFFCGCX.xsc">
+      <DependentUpon>DSDSKFFCGCX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKFFCGCX\DSDSKFFCGCX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKFFCGCX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKFFCGCX\DSDSKFFCGCX.xss">
+      <DependentUpon>DSDSKFFCGCX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKFFSJ\DSDSKFFSJ.xsc">
+      <DependentUpon>DSDSKFFSJ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKFFSJ\DSDSKFFSJ.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKFFSJ.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKFFSJ\DSDSKFFSJ.xss">
+      <DependentUpon>DSDSKFFSJ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKJJ\DSDSKJJ.xsc">
+      <DependentUpon>DSDSKJJ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKJJ\DSDSKJJ.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKJJ1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKJJ\DSDSKJJ.xss">
+      <DependentUpon>DSDSKJJ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKKHFLWH\DSDSKKHFLWH.xsc">
+      <DependentUpon>DSDSKKHFLWH.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKKHFLWH\DSDSKKHFLWH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKKHFLWH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKKHFLWH\DSDSKKHFLWH.xss">
+      <DependentUpon>DSDSKKHFLWH.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKKHTZ\DSDSKKHZT.xsc">
+      <DependentUpon>DSDSKKHZT.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKKHTZ\DSDSKKHZT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKKHZT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKKHTZ\DSDSKKHZT.xss">
+      <DependentUpon>DSDSKKHZT.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKPOS\DSDSKPOS.xsc">
+      <DependentUpon>DSDSKPOS.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKPOS\DSDSKPOS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKPOS1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKPOS\DSDSKPOS.xss">
+      <DependentUpon>DSDSKPOS.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKSXFFL\DSDSKSXFFL.xsc">
+      <DependentUpon>DSDSKSXFFL.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKSXFFL\DSDSKSXFFL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKSXFFL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKSXFFL\DSDSKSXFFL.xss">
+      <DependentUpon>DSDSKSXFFL.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKYCDKHZ\DSDSKYCHZ.xsc">
+      <DependentUpon>DSDSKYCHZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKYCDKHZ\DSDSKYCHZ.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKYCHZ.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSKGL\DSKYCDKHZ\DSDSKYCHZ.xss">
+      <DependentUpon>DSDSKYCHZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKYHDR\DSYHDR.xsc">
+      <DependentUpon>DSYHDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKYHDR\DSYHDR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYHDR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKYHDR\DSYHDR.xss">
+      <DependentUpon>DSYHDR.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKYKGL\DSDSKYK.xsc">
+      <DependentUpon>DSDSKYK.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKYKGL\DSDSKYK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKYK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKYKGL\DSDSKYK.xss">
+      <DependentUpon>DSDSKYK.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKZZ\DSDSKZZ.xsc">
+      <DependentUpon>DSDSKZZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\DSKZZ\DSDSKZZ.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKZZ.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\DSKZZ\DSDSKZZ.xss">
+      <DependentUpon>DSDSKZZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\Dxtz\DsDxtz.xsc">
+      <DependentUpon>DsDxtz.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\Dxtz\DsDxtz.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsDxtz.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\Dxtz\DsDxtz.xss">
+      <DependentUpon>DsDxtz.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\FBDSKHZ\DSFBDSKHZ.xsc">
+      <DependentUpon>DSFBDSKHZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\FBDSKHZ\DSFBDSKHZ.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSFBDSKHZ.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\FBDSKHZ\DSFBDSKHZ.xss">
+      <DependentUpon>DSFBDSKHZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\QRYCDSKMX\DSQRYCDSK.xsc">
+      <DependentUpon>DSQRYCDSK.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\QRYCDSKMX\DSQRYCDSK.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSQRYCDSK.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\QRYCDSKMX\DSQRYCDSK.xss">
+      <DependentUpon>DSQRYCDSK.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\WYFFYCCL\DSWYFFYC.xsc">
+      <DependentUpon>DSWYFFYC.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\WYFFYCCL\DSWYFFYC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSWYFFYC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\WYFFYCCL\DSWYFFYC.xss">
+      <DependentUpon>DSWYFFYC.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\ZBDSKFF\DSZBDSKFF.xsc">
+      <DependentUpon>DSZBDSKFF.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\ZBDSKFF\DSZBDSKFF.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSZBDSKFF.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\ZBDSKFF\DSZBDSKFF.xss">
+      <DependentUpon>DSZBDSKFF.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\ZBDSKHZ\DSZBDSKHZ.xsc">
+      <DependentUpon>DSZBDSKHZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\ZBDSKHZ\DSZBDSKHZ.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSZBDSKHZ.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\ZBDSKHZ\DSZBDSKHZ.xss">
+      <DependentUpon>DSZBDSKHZ.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\ZZYCDSKMX\DSZZYCMX.xsc">
+      <DependentUpon>DSZZYCMX.xsd</DependentUpon>
+    </None>
+    <None Include="DSKGL\ZZYCDSKMX\DSZZYCMX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSZZYCMX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSKGL\ZZYCDSKMX\DSZZYCMX.xss">
+      <DependentUpon>DSZZYCMX.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\SXFFL\DSDSKSXFFL.xsc">
+      <DependentUpon>DSDSKSXFFL.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\SXFFL\DSDSKSXFFL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSDSKSXFFL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JCSJ\SXFFL\DSDSKSXFFL.xss">
+      <DependentUpon>DSDSKSXFFL.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\YHZHWH\DSYHZHWH.xsc">
+      <DependentUpon>DSYHZHWH.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\YHZHWH\DSYHZHWH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYHZHWH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JCSJ\YHZHWH\DSYHZHWH.xss">
+      <DependentUpon>DSYHZHWH.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\ZHLXGL\DSZHLXGL.xsc">
+      <DependentUpon>DSZHLXGL.xsd</DependentUpon>
+    </None>
+    <None Include="JCSJ\ZHLXGL\DSZHLXGL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSZHLXGL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JCSJ\ZHLXGL\DSZHLXGL.xss">
+      <DependentUpon>DSZHLXGL.xsd</DependentUpon>
+    </None>
+    <None Include="JSGL\CYJGJS\DSYJKHZD.xsc">
+      <DependentUpon>DSYJKHZD.xsd</DependentUpon>
+    </None>
+    <None Include="JSGL\CYJGJS\DSYJKHZD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYJKHZD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JSGL\CYJGJS\DSYJKHZD.xss">
+      <DependentUpon>DSYJKHZD.xsd</DependentUpon>
+    </None>
+    <None Include="JSGL\KHJS\DSKHJS.xsc">
+      <DependentUpon>DSKHJS.xsd</DependentUpon>
+    </None>
+    <None Include="JSGL\KHJS\DSKHJS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSKHJS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JSGL\KHJS\DSKHJS.xss">
+      <DependentUpon>DSKHJS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FMS_DskDx\service.wsdl" />
+    <None Include="Web.config" />
+    <None Include="ZYGL\JGGXWH\DSJGGXWH.xsc">
+      <DependentUpon>DSJGGXWH.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\JGGXWH\DSJGGXWH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSJGGXWH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ZYGL\JGGXWH\DSJGGXWH.xss">
+      <DependentUpon>DSJGGXWH.xsd</DependentUpon>
+    </None>
+    <Content Include="ZYGL\Resources\Generated\Web.config" />
+    <None Include="ZYGL\JYLXWH\DSJYLXWH.xsc">
+      <DependentUpon>DSJYLXWH.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\JYLXWH\DSJYLXWH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSJYLXWH1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ZYGL\JYLXWH\DSJYLXWH.xss">
+      <DependentUpon>DSJYLXWH.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\POSBMWH\DSPOSWH.xsc">
+      <DependentUpon>DSPOSWH.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\POSBMWH\DSPOSWH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPOSWH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ZYGL\POSBMWH\DSPOSWH.xss">
+      <DependentUpon>DSPOSWH.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\XTWSR\DSXTWSR.xsc">
+      <DependentUpon>DSXTWSR.xsd</DependentUpon>
+    </None>
+    <None Include="CWGL\XTWSR\DSXTWSR.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSXTWSR.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CWGL\XTWSR\DSXTWSR.xss">
+      <DependentUpon>DSXTWSR.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\XTWSRLX\DSXTWSRLX.xsc">
+      <DependentUpon>DSXTWSRLX.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\XTWSRLX\DSXTWSRLX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSXTWSRLX.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ZYGL\XTWSRLX\DSXTWSRLX.xss">
+      <DependentUpon>DSXTWSRLX.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\YQZLPWD\DSJGGL.xsc">
+      <DependentUpon>DSJGGL.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\YQZLPWD\DSJGGL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSJGGL1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZYGL\YQZLPWD\DSJGGL.xss">
+      <DependentUpon>DSJGGL.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\ZJDB\SGDB\DSSGDB.xsc">
+      <DependentUpon>DSSGDB.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\ZJDB\SGDB\DSSGDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSSGDB1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZYGL\ZJDB\SGDB\DSSGDB.xss">
+      <DependentUpon>DSSGDB.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\ZJDB\YQZLDP\DSYQZL.xsc">
+      <DependentUpon>DSYQZL.xsd</DependentUpon>
+    </None>
+    <None Include="ZYGL\ZJDB\YQZLDP\DSYQZL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSYQZL1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZYGL\ZJDB\YQZLDP\DSYQZL.xss">
+      <DependentUpon>DSYQZL.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JYPubFiles\JYPubFiles.csproj">
+      <Project>{A24B11E5-4158-40F7-843F-4EA97386E9A4}</Project>
+      <Name>JYPubFiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS\TMS.csproj">
+      <Project>{8E57183F-3554-44A0-BE00-DA624AB5CE6C}</Project>
+      <Name>TMS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CWGL\DHYYECX\FrmADHCXDHYYE.resx">
+      <DependentUpon>FrmADHCXDHYYE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\FWKGBFCX\FrmFWKGBFCX.resx">
+      <DependentUpon>FrmFWKGBFCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\GLSDWNWYYSR\FrmGLSDWNWYYSR.resx">
+      <DependentUpon>FrmGLSDWNWYYSR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\GLSDWNWYYSR\FrmGLSDWNWYYSRXX.resx">
+      <DependentUpon>FrmGLSDWNWYYSRXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\LSDWCKCX\FrmAJGCXDHYYE.resx">
+      <DependentUpon>FrmAJGCXDHYYE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\DHWTHCX\FrmDHWTHKCX.resx">
+      <DependentUpon>FrmDHWTHKCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\LSDWCKCX\FrmLSDWCKCX.resx">
+      <DependentUpon>FrmLSDWCKCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\NHDR\FrmYBFNH.resx">
+      <DependentUpon>FrmYBFNH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\QRJKYBF\FrmYbfqrjk.resx">
+      <DependentUpon>FrmYbfqrjk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\THDSK\FrmTHDSKCX.resx">
+      <DependentUpon>FrmTHDSKCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\THDSK\FrmTHDSKCXMX.resx">
+      <DependentUpon>FrmTHDSKCXMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\THTZQSMX\FrmTHTZQSMXCX.resx">
+      <DependentUpon>FrmTHTZQSMXCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\THYDCX\FrmTHYDCX.resx">
+      <DependentUpon>FrmTHYDCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWJHDR\FrmXTWJHDR.resx">
+      <DependentUpon>FrmXTWJHDR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWNHDR\FrmDRMX.resx">
+      <DependentUpon>FrmDRMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWNHDR\FrmXTWNHDR.resx">
+      <DependentUpon>FrmXTWNHDR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSP\FrmXtspcx.resx">
+      <DependentUpon>FrmXtspcx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSP\FrmXTSRSP.resx">
+      <DependentUpon>FrmXTSRSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSP\FrmXTSRSPMX.resx">
+      <DependentUpon>FrmXTSRSPMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSP\FrmXtwckqkcx.resx">
+      <DependentUpon>FrmXtwckqkcx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSP\FrmXTWSPMX.resx">
+      <DependentUpon>FrmXTWSPMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSR\FrmXtwDkcx.resx">
+      <DependentUpon>FrmXtwDkcx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSR\FrmXTWSRCX.resx">
+      <DependentUpon>FrmXTWSRCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSR\FrmXtwsrcx2.resx">
+      <DependentUpon>FrmXtwsrcx2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSR\FrmXTWSRSB.resx">
+      <DependentUpon>FrmXTWSRSB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSR\FrmXTWSRSP.resx">
+      <DependentUpon>FrmXTWSRSP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSR\FrmXTWSRSPMX.resx">
+      <DependentUpon>FrmXTWSRSPMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFDWKDR\FrmYBFDWKMX.resx">
+      <DependentUpon>FrmYBFDWKMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFDWKDR\FrmYBFDWKNHDR.resx">
+      <DependentUpon>FrmYBFDWKNHDR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFDWKDR\FrmYBFDWKZSDR.resx">
+      <DependentUpon>FrmYBFDWKZSDR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFJSXCX\FrmYBFCKJSXCX.resx">
+      <DependentUpon>FrmYBFCKJSXCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFJSXCX\FrmYBFCKJSXMX.resx">
+      <DependentUpon>FrmYBFCKJSXMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFNHDR\FrmYBFJHDR.resx">
+      <DependentUpon>FrmYBFJHDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFNHDR\FrmYBFNHMX.resx">
+      <DependentUpon>FrmYBFNHMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFNHDR\FrmYBNYHDR.resx">
+      <DependentUpon>FrmYBNYHDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFYQZLDK\FrmJexg.resx">
+      <DependentUpon>FrmJexg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFYQZLDK\FrmYBFYQZLDK.resx">
+      <DependentUpon>FrmYBFYQZLDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YBFZDDK\YBFDK\FrmYBFDK.resx">
+      <DependentUpon>FrmYBFDK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YDTZFCX\FrmYDTZFCX.resx">
+      <DependentUpon>FrmYDTZFCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YQZLMM\FrmYBFYQZL.resx">
+      <DependentUpon>FrmYBFYQZL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YQZLMM\FrmYBFPWD.resx">
+      <DependentUpon>FrmYBFPWD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YSKCX2\FrmYSKCX.resx">
+      <DependentUpon>FrmYSKCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YSKCX\FrmYSKCX2.resx">
+      <DependentUpon>FrmYSKCX2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YSKCX\FrmYCZW.resx">
+      <DependentUpon>FrmYCZW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YSKCX\FrmYSKCX.resx">
+      <DependentUpon>FrmYSKCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRCX\FrmYYSRCX2.resx">
+      <DependentUpon>FrmYYSRCX2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRCX\FrmYCZW.resx">
+      <DependentUpon>FrmYCZW.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRCX\FrmYYSRCX.resx">
+      <DependentUpon>FrmYYSRCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRTJ2\FrmXbLsdSrTj.resx">
+      <DependentUpon>FrmXbLsdSrTj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRTJ2\FrmXbYySrTj.resx">
+      <DependentUpon>FrmXbYySrTj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRTJ\FrmLsdSrTj.resx">
+      <DependentUpon>FrmLsdSrTj.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRTJ\FrmYdcx.resx">
+      <DependentUpon>FrmYdcx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\YYSRTJ\FrmYySrTj.resx">
+      <DependentUpon>FrmYySrTj.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZBJKRBCX\FrmZBJKRBCX.resx">
+      <DependentUpon>FrmZBJKRBCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\JKRBCX\FrmJKRBCX.resx">
+      <DependentUpon>FrmJKRBCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\JKRB\FrmJKRB.resx">
+      <DependentUpon>FrmJKRB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\JKRB\FrmJKRBMX.resx">
+      <DependentUpon>FrmJKRBMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\JKRB\FrmJkRBMXBC.resx">
+      <DependentUpon>FrmJkRBMXBC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\QRJK\FrmQRJK.resx">
+      <DependentUpon>FrmQRJK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\QRJK\FrmYbfXq.resx">
+      <DependentUpon>FrmYbfXq.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFBC.resx">
+      <DependentUpon>FrmTZFGBFBC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFJKMX.resx">
+      <DependentUpon>FrmTZFGBFJKMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\ZZHQRJKD\TZFGBFJKRB\FrmTZFGBFJKRB.resx">
+      <DependentUpon>FrmTZFGBFJKRB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DQJFFYYSRYB\FrmDQJFFYYSRYB.resx">
+      <DependentUpon>FrmDQJFFYYSRYB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXCX.resx">
+      <DependentUpon>FrmDSKCKJSXCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXMX.resx">
+      <DependentUpon>FrmDSKCKJSXMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKCKJSXCX\FrmDSKCKJSXX.resx">
+      <DependentUpon>FrmDSKCKJSXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKCKLCX\FrmDskCklMx.resx">
+      <DependentUpon>FrmDskCklMx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKCKLCX\FrmDSKCKLSelect.resx">
+      <DependentUpon>FrmDSKCKLSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKCKLCX_FKFS\FrmDskCklMx_FKFS.resx">
+      <DependentUpon>FrmDskCklMx_FKFS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKCKLCX_FKFS\FrmDSKCKLSelect_FKFS.resx">
+      <DependentUpon>FrmDSKCKLSelect_FKFS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGCX.resx">
+      <DependentUpon>FrmDSKFWKWGCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGCXMX.resx">
+      <DependentUpon>FrmDSKFWKWGCXMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKFWKWGCX\FrmDSKFWKWGYDMX.resx">
+      <DependentUpon>FrmDSKFWKWGYDMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKHDCX\FrmDSKHDCX.resx">
+      <DependentUpon>FrmDSKHDCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\DSKQCCX\FrmDSKQCCX.resx">
+      <DependentUpon>FrmDSKQCCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\JGYCKCX\FrmJGYCKCX.resx">
+      <DependentUpon>FrmJGYCKCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\JGYSKCX\FrmJGYSKCX.resx">
+      <DependentUpon>FrmJGYSKCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\JGYSKCX\FrmJGYSKCXMX.resx">
+      <DependentUpon>FrmJGYSKCXMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SFTZFCX\SFTHZ\FrmSFTDayDqHz.resx">
+      <DependentUpon>FrmSFTDayDqHz.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SFTZFCX\SFTHZ\FrmSFTDayHz.resx">
+      <DependentUpon>FrmSFTDayHz.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SFTZFCX\SFTYD\FrmSftYd.resx">
+      <DependentUpon>FrmSftYd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SRQKCX\FrmSRCXCP.resx">
+      <DependentUpon>FrmSRCXCP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SRQKCX\FrmSRCXDQ.resx">
+      <DependentUpon>FrmSRCXDQ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SRQKCX\FrmSRCXLSD.resx">
+      <DependentUpon>FrmSRCXLSD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SRQKCX\FrmSRCXLSZD.resx">
+      <DependentUpon>FrmSRCXLSZD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SRQKCX\FrmSRCXYDXX.resx">
+      <DependentUpon>FrmSRCXYDXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\SRQKCX\FrmSRQKCX.resx">
+      <DependentUpon>FrmSRQKCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmLSDWFKDSK.resx">
+      <DependentUpon>FrmLSDWFKDSK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmLsdWfkDsk1.resx">
+      <DependentUpon>FrmLsdWfkDsk1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmWFKDSKCX.resx">
+      <DependentUpon>FrmWFKDSKCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmWfkDskCx1.resx">
+      <DependentUpon>FrmWfkDskCx1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmYDWFKDSK.resx">
+      <DependentUpon>FrmYDWFKDSK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmYdWfkDsk1.resx">
+      <DependentUpon>FrmYdWfkDsk1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmLSDWFKDSK2.resx">
+      <DependentUpon>FrmLSDWFKDSK2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmWFKDSKCX2.resx">
+      <DependentUpon>FrmWFKDSKCX2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKDSKCX\FrmYDWFKDSK2.resx">
+      <DependentUpon>FrmYDWFKDSK2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKYBFCX\FrmLSDWFKYBF.resx">
+      <DependentUpon>FrmLSDWFKYBF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKYBFCX\FrmWFKYBFCX.resx">
+      <DependentUpon>FrmWFKYBFCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\WFKYBFCX\FrmYDWFKYBF.resx">
+      <DependentUpon>FrmYDWFKYBF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\ZBYCKCX\FrmZBYSKCX.resx">
+      <DependentUpon>FrmZBYSKCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\Zjglsjhd\FrmZjglsjhd.resx">
+      <DependentUpon>FrmZjglsjhd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\ZSFJHFCX\FrmZSFJHFCX.resx">
+      <DependentUpon>FrmZSFJHFCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CXTJ\ZSFJHFCX\FrmZSFJHFMX.resx">
+      <DependentUpon>FrmZSFJHFMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\WYDSKFF\FrmWYDSKFF.resx">
+      <DependentUpon>FrmWYDSKFF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\WYDSKFF\FrmWYDSKFFMX.resx">
+      <DependentUpon>FrmWYDSKFFMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\YQZLDSKFFFH\FrmYQZLFFFH.resx">
+      <DependentUpon>FrmYQZLFFFH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\YQZLDSKFFFH\FrmYQZLFHMX.resx">
+      <DependentUpon>FrmYQZLFHMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\YQZLDSKFF\FrmYQZLDSKFF.resx">
+      <DependentUpon>FrmYQZLDSKFF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\YQZLDSKFF\FrmYQZLDSKFFMX.resx">
+      <DependentUpon>FrmYQZLDSKFFMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\YQZLFFCX\Frmyqzlffcx.resx">
+      <DependentUpon>Frmyqzlffcx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCKFF\YQZLFFCX\FrmYqzlffcxmx.resx">
+      <DependentUpon>FrmYqzlffcxmx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCX\DSKHZB\FrmDSKHZB.resx">
+      <DependentUpon>FrmDSKHZB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCX\DSKHZB\FrmDSKHZBXX.resx">
+      <DependentUpon>FrmDSKHZBXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCX\DSKPMCX\FrmDSKPMCX.resx">
+      <DependentUpon>FrmDSKPMCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKCX\DSKPMCX\FrmDSKPMMX.resx">
+      <DependentUpon>FrmDSKPMMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDKCGCX\FrmDSKDKCGCX.resx">
+      <DependentUpon>FrmDSKDKCGCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDKCX\FrmDSKDKCX.resx">
+      <DependentUpon>FrmDSKDKCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDKFS\FrmDSKDFFS.resx">
+      <DependentUpon>FrmDSKDFFS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDKJSL\Frmdqxx.resx">
+      <DependentUpon>Frmdqxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDKJSL\FrmDSKDKJSL.resx">
+      <DependentUpon>FrmDSKDKJSL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDKJSL\FrmJgxx.resx">
+      <DependentUpon>FrmJgxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDK\FrmDSKDK.resx">
+      <DependentUpon>FrmDSKDK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDK\FrmJexg.resx">
+      <DependentUpon>FrmJexg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDK\FrmPwd.resx">
+      <DependentUpon>FrmPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKMX.resx">
+      <DependentUpon>FrmDSKDWKMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKNHDR.resx">
+      <DependentUpon>FrmDSKDWKNHDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKDWKDR\dsk\FrmDSKDWKZSDR.resx">
+      <DependentUpon>FrmDSKDWKZSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKEWMZFDR\FrmDSKEWMDR.resx">
+      <DependentUpon>FrmDSKEWMDR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKEWMZFXZ\FrmDSKEWMZFXZ.resx">
+      <DependentUpon>FrmDSKEWMZFXZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKFFCGCX\FrmDSKFFCGCX.resx">
+      <DependentUpon>FrmDSKFFCGCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKFFSJ\FrmDskffsj.resx">
+      <DependentUpon>FrmDskffsj.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKFFSJ\FrmDskffsjmx.resx">
+      <DependentUpon>FrmDskffsjmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKFFSJ\FrmSort.resx">
+      <DependentUpon>FrmSort.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKJJ\FrmDSKJJ.resx">
+      <DependentUpon>FrmDSKJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKJKRB\QRYCMX\FrmQRYCDSKMX.resx">
+      <DependentUpon>FrmQRYCDSKMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKJKRB\ZZYCMX\FrmZZYCDSKMX.resx">
+      <DependentUpon>FrmZZYCDSKMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKJKRB\ZZYCMX\FrmZZYCDSKTJ.resx">
+      <DependentUpon>FrmZZYCDSKTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKJSD\FrmDSKJSD.resx">
+      <DependentUpon>FrmDSKJSD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKKHFLWH\FrmDSKKHFLWH.resx">
+      <DependentUpon>FrmDSKKHFLWH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKKHFLWH\FrmKHFLBJ.resx">
+      <DependentUpon>FrmKHFLBJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKKHTZ\FrmDSKKHTZ.resx">
+      <DependentUpon>FrmDSKKHTZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKKHTZ\FrmDSKKHXX.resx">
+      <DependentUpon>FrmDSKKHXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKPD\FrmDSKPD.resx">
+      <DependentUpon>FrmDSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKPOSDR\FrmPLPOSDR.resx">
+      <DependentUpon>FrmPLPOSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKPOSFA\FrmPOSDSKFA.resx">
+      <DependentUpon>FrmPOSDSKFA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKPOS\FrmPOSDR.resx">
+      <DependentUpon>FrmPOSDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKPOS\FrmPOSMX.resx">
+      <DependentUpon>FrmPOSMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKQSCX\Frmdskqscx.resx">
+      <DependentUpon>Frmdskqscx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKQSCX\Frmdskqsmx.resx">
+      <DependentUpon>Frmdskqsmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKSFTHZ\FrmDSKSftHz.resx">
+      <DependentUpon>FrmDSKSftHz.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKSFTHZ\FrmDSksftmx.resx">
+      <DependentUpon>FrmDSksftmx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKSXFFL\FrmDSKSXFFLMXNEW.resx">
+      <DependentUpon>FrmDSKSXFFLMXNEW.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKSXFFL\FrmDSKSXFFLMXWH.resx">
+      <DependentUpon>FrmDSKSXFFLMXWH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKSXFFL\FrmDSKSXFFLWH.resx">
+      <DependentUpon>FrmDSKSXFFLWH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKYCDKHZ\FrmDSKFFYCMX.resx">
+      <DependentUpon>FrmDSKFFYCMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKYCDKHZ\FrmDSKYCHZ.resx">
+      <DependentUpon>FrmDSKYCHZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKYHDR\FrmJHDR.resx">
+      <DependentUpon>FrmJHDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKYHDR\FrmJHMX.resx">
+      <DependentUpon>FrmJHMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKYHDR\FrmYHDR.resx">
+      <DependentUpon>FrmYHDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKYHDR\FrmYHMX.resx">
+      <DependentUpon>FrmYHMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKYKGL\FrmDSKYKGL.resx">
+      <DependentUpon>FrmDSKYKGL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKZZ\FrmDSKZZ.resx">
+      <DependentUpon>FrmDSKZZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKZZ\FrmDSKZZNEW.resx">
+      <DependentUpon>FrmDSKZZNEW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\DSKZZ\FrmNewDSKZZ.resx">
+      <DependentUpon>FrmNewDSKZZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\Dxtz\FrmDskDxtz.resx">
+      <DependentUpon>FrmDskDxtz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\FBDSKHZ\FrmDSKXX.resx">
+      <DependentUpon>FrmDSKXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\FBDSKHZ\FrmFBDSKHZ.resx">
+      <DependentUpon>FrmFBDSKHZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\FBDSKHZ\FrmZBDSKHZXX.resx">
+      <DependentUpon>FrmZBDSKHZXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\LSDDZD\FrmLSDDZD.resx">
+      <DependentUpon>FrmLSDDZD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\LSDDZD\FrmLSDDZDMX.resx">
+      <DependentUpon>FrmLSDDZDMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\QRYCDSKMX\FrmQRYCDSKMX.resx">
+      <DependentUpon>FrmQRYCDSKMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\QRYCDSKMX\FrmQRYCDSKMXLL.resx">
+      <DependentUpon>FrmQRYCDSKMXLL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\THBJ\FrmDSKTHCX.resx">
+      <DependentUpon>FrmDSKTHCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\THBJ\FrmDSKTHCXMX.resx">
+      <DependentUpon>FrmDSKTHCXMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\THBJ\FrmThDsk.resx">
+      <DependentUpon>FrmThDsk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\WYFFYCCL\FrmWYFFYCCL.resx">
+      <DependentUpon>FrmWYFFYCCL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\YFLSDZJ\FrmInsert.resx">
+      <DependentUpon>FrmInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\YFLSDZJ\FrmYfLsdZjLr.resx">
+      <DependentUpon>FrmYfLsdZjLr.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\ZBDSKFF\FrmZBDSKFF.resx">
+      <DependentUpon>FrmZBDSKFF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\ZBDSKHZ\FrmDSKMXCX.resx">
+      <DependentUpon>FrmDSKMXCX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\ZBDSKHZ\FrmDSKWFFMX.resx">
+      <DependentUpon>FrmDSKWFFMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\ZBDSKHZ\FrmZBDSKHZ.resx">
+      <DependentUpon>FrmZBDSKHZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\ZZYCDSKMX\FrmDSKRBLL.resx">
+      <DependentUpon>FrmDSKRBLL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\ZZYCDSKMX\FrmZZYCDSKMX.resx">
+      <DependentUpon>FrmZZYCDSKMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSKGL\ZZYCDSKMX\FrmZZYCDSKTJ.resx">
+      <DependentUpon>FrmZZYCDSKTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\DQXX\FrmDQXX.resx">
+      <DependentUpon>FrmDQXX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\DQXX\FrmDQXXMX.resx">
+      <DependentUpon>FrmDQXXMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\POSBh\FrmAJGCX.resx">
+      <DependentUpon>FrmAJGCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\POSBh\FrmPOSBHTJ.resx">
+      <DependentUpon>FrmPOSBHTJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\SXFFL\FrmDSKSXFFL.resx">
+      <DependentUpon>FrmDSKSXFFL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\SXFFL\FrmDSKSXFFLMX.resx">
+      <DependentUpon>FrmDSKSXFFLMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\YHZHWH\FrmNewYHZH.resx">
+      <DependentUpon>FrmNewYHZH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\YHZHWH\FrmYHZHWH.resx">
+      <DependentUpon>FrmYHZHWH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\ZHLXGL\FrmNewZhlx.resx">
+      <DependentUpon>FrmNewZhlx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\ZHLXGL\FrmZHLXGL.resx">
+      <DependentUpon>FrmZHLXGL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSGL\CYJGJS\FrmYJKHZD.resx">
+      <DependentUpon>FrmYJKHZD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSGL\KHJS\FrmKHJSDel.resx">
+      <DependentUpon>FrmKHJSDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSGL\KHJS\FrmKHJSXQ.resx">
+      <DependentUpon>FrmKHJSXQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSGL\KHJS\FrmKHJSXX.resx">
+      <DependentUpon>FrmKHJSXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSGL\KHJS\FrmKHZJ.resx">
+      <DependentUpon>FrmKHZJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSGL\KHJS\FrmKHJSDLL.resx">
+      <DependentUpon>FrmKHJSDLL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSGL\KHJS\FrmKHZJUp.resx">
+      <DependentUpon>FrmKHZJUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectDq.resx">
+      <DependentUpon>FrmSelectDq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectJg.resx">
+      <DependentUpon>FrmSelectJg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectJg1.resx">
+      <DependentUpon>FrmSelectJg1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectJg2.resx">
+      <DependentUpon>FrmSelectJg2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectJg3.resx">
+      <DependentUpon>FrmSelectJg3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectJg4.resx">
+      <DependentUpon>FrmSelectJg4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectKh.resx">
+      <DependentUpon>FrmSelectKh.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleFrm\FrmSelectKh1.resx">
+      <DependentUpon>FrmSelectKh1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\WDXXWH\FrmWDXX.resx">
+      <DependentUpon>FrmWDXX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JCSJ\WDXXWH\FrmWDXXMX.resx">
+      <DependentUpon>FrmWDXXMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZJGL\ZHCX\FrmZHCX.resx">
+      <DependentUpon>FrmZHCX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\JGGXWH\FrmJGGXMX.resx">
+      <DependentUpon>FrmJGGXMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\JGGXWH\FrmJGGXWH.resx">
+      <DependentUpon>FrmJGGXWH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\JYLXWH\FrmJylxwh.resx">
+      <DependentUpon>FrmJylxwh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\JYLXWH\FrmJylxwhmx.resx">
+      <DependentUpon>FrmJylxwhmx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\JYLXWH\FrmSort.resx">
+      <DependentUpon>FrmSort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\POSBMWH\FrmPosBmwh.resx">
+      <DependentUpon>FrmPosBmwh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\POSBMWH\FrmPosWHMX.resx">
+      <DependentUpon>FrmPosWHMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\XTWSRLX\FrmXTWSRLX.resx">
+      <DependentUpon>FrmXTWSRLX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\XTWSRLX\FrmXTWSRLXMX.resx">
+      <DependentUpon>FrmXTWSRLXMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CWGL\XTWSR\FrmXTWSRMX.resx">
+      <DependentUpon>FrmXTWSRMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\YQZLPWD\FrmYQZL.resx">
+      <DependentUpon>FrmYQZL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\YQZLPWD\FrmYQZLPWD.resx">
+      <DependentUpon>FrmYQZLPWD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\SGDB\FrmSelectYh.resx">
+      <DependentUpon>FrmSelectYh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\SGDB\FrmSgdb.resx">
+      <DependentUpon>FrmSgdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\SGDB\FrmSGDBMX.resx">
+      <DependentUpon>FrmSGDBMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\YQZLDP\FrmDPXX.resx">
+      <DependentUpon>FrmDPXX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\YQZLDP\FrmJe.resx">
+      <DependentUpon>FrmJe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\YQZLDP\FrmPwd2.resx">
+      <DependentUpon>FrmPwd2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\YQZLDP\FrmYQZLDB.resx">
+      <DependentUpon>FrmYQZLDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\YQZLDP\FrmYQZLFH.resx">
+      <DependentUpon>FrmYQZLFH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\YQZLDP\FrmZz.resx">
+      <DependentUpon>FrmZz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZYGL\ZJDB\YQZLDP\FrmZzCz.resx">
+      <DependentUpon>FrmZzCz.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CWGL\XTWRBSP\" />
+    <Folder Include="ZYGL\Resources\UserData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://222.173.26.44:8090/service/service.asmx%3fop=Send_SMS">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FMS_DskDx\</RelPath>
+      <UpdateFromURL>http://222.173.26.44:8090/service/service.asmx%3fop=Send_SMS</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FMS_FMS_DskDx_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v10.0\Gizmox.VWGApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>23288</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

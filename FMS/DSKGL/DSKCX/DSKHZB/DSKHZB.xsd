@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSKHZB" targetNamespace="http://tempuri.org/DSKHZB.xsd" xmlns:mstns="http://tempuri.org/DSKHZB.xsd" xmlns="http://tempuri.org/DSKHZB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="TMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.TMSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DsklsdhzbTableAdapter" GeneratorDataComponentClassName="DsklsdhzbTableAdapter" Name="Vfmsdsklsdhzb" UserDataComponentName="DsklsdhzbTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select isnull(sum(yc+wqs),0.00) as sl,isnull(sum(yc),0.00) as yc,isnull(sum(sc),0.00) as sc,isnull(sum(yc-sc),0.00) as wc,isnull(sum(wqs),0.00) as ws,
+0.00 as yf,0.00 AS sf, 0.00 AS wf from vfmsdsklsdhzb </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="sl" DataSetColumn="sl" />
+              <Mapping SourceColumn="yc" DataSetColumn="yc" />
+              <Mapping SourceColumn="sc" DataSetColumn="sc" />
+              <Mapping SourceColumn="wc" DataSetColumn="wc" />
+              <Mapping SourceColumn="ws" DataSetColumn="ws" />
+              <Mapping SourceColumn="yf" DataSetColumn="yf" />
+              <Mapping SourceColumn="sf" DataSetColumn="sf" />
+              <Mapping SourceColumn="wf" DataSetColumn="wf" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DskjrhzbTableAdapter" GeneratorDataComponentClassName="DskjrhzbTableAdapter" Name="Vfmsdskjrhzb" UserDataComponentName="DskjrhzbTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select 0.00 as sl,0.00 as yc,0.00 as sc,0.00 as wc,0.00 as ws,
+isnull(sum(dsk),0.00) as yf,isnull(sum(sfdsk),0.00) as sf,isnull(sum(wfdsk),0.00) as wf from vfmsdskjrhzb</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="sl" DataSetColumn="sl" />
+              <Mapping SourceColumn="yc" DataSetColumn="yc" />
+              <Mapping SourceColumn="sc" DataSetColumn="sc" />
+              <Mapping SourceColumn="wc" DataSetColumn="wc" />
+              <Mapping SourceColumn="ws" DataSetColumn="ws" />
+              <Mapping SourceColumn="yf" DataSetColumn="yf" />
+              <Mapping SourceColumn="sf" DataSetColumn="sf" />
+              <Mapping SourceColumn="wf" DataSetColumn="wf" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VfmsdskhzbxxTableAdapter" GeneratorDataComponentClassName="VfmsdskhzbxxTableAdapter" Name="Vfmsdskhzbxx" UserDataComponentName="VfmsdskhzbxxTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS.dbo.Vfmsdskhzbxx" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT bh, inssj, qsd, mdd, fhlxr, dhlxr, dsk, ddsj, shsj, qssj FROM Vfmsdskhzbxx</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bh" DataSetColumn="bh" />
+              <Mapping SourceColumn="inssj" DataSetColumn="inssj" />
+              <Mapping SourceColumn="qsd" DataSetColumn="qsd" />
+              <Mapping SourceColumn="mdd" DataSetColumn="mdd" />
+              <Mapping SourceColumn="fhlxr" DataSetColumn="fhlxr" />
+              <Mapping SourceColumn="dhlxr" DataSetColumn="dhlxr" />
+              <Mapping SourceColumn="dsk" DataSetColumn="dsk" />
+              <Mapping SourceColumn="ddsj" DataSetColumn="ddsj" />
+              <Mapping SourceColumn="shsj" DataSetColumn="shsj" />
+              <Mapping SourceColumn="qssj" DataSetColumn="qssj" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS.dbo.Vfmsdskhzbxx1" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT bh, inssj, qsd, mdd, fhlxr, dhlxr, dsk, ddsj, shsj, qssj FROM Vfmsdskhzbxx1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="SELECT * FROM dbo.Vfmsdskhzbxx1 UNION ALL SELECT * FROM Vfmsdskhzbxx2" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDh" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDh" GeneratorSourceName="FillByDh" GetMethodModifier="Public" GetMethodName="GetDataByDh" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDh" UserSourceName="FillByDh">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT bh, inssj, qsd, mdd, fhlxr, dhlxr, dsk, ddsj, shsj, qssj FROM (SELECT * FROM dbo.Vfmsdskhzbxx1 UNION ALL SELECT * FROM Vfmsdskhzbxx2) as a</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS.dbo.Vfmsdskhzbxx2" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByWqs" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByWqs" GeneratorSourceName="FillByWqs" GetMethodModifier="Public" GetMethodName="GetDataByWqs" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByWqs" UserSourceName="FillByWqs">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT bh, inssj, qsd, mdd, fhlxr, dhlxr, dsk, ddsj, shsj, qssj FROM Vfmsdskhzbxx2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSKHZB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False" msprop:Generator_DataSetName="DSKHZB" msprop:Generator_UserDSName="DSKHZB">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vfmsdsklsdhzb" msprop:Generator_TableClassName="VfmsdsklsdhzbDataTable" msprop:Generator_TableVarName="tableVfmsdsklsdhzb" msprop:Generator_TablePropName="Vfmsdsklsdhzb" msprop:Generator_RowDeletingName="VfmsdsklsdhzbRowDeleting" msprop:Generator_UserTableName="Vfmsdsklsdhzb" msprop:Generator_RowChangingName="VfmsdsklsdhzbRowChanging" msprop:Generator_RowEvHandlerName="VfmsdsklsdhzbRowChangeEventHandler" msprop:Generator_RowDeletedName="VfmsdsklsdhzbRowDeleted" msprop:Generator_RowEvArgName="VfmsdsklsdhzbRowChangeEvent" msprop:Generator_RowChangedName="VfmsdsklsdhzbRowChanged" msprop:Generator_RowClassName="VfmsdsklsdhzbRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sl" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsl" msprop:Generator_ColumnPropNameInRow="sl" msprop:Generator_ColumnPropNameInTable="slColumn" msprop:Generator_UserColumnName="sl" type="xs:decimal" minOccurs="0" />
+              <xs:element name="yc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnyc" msprop:Generator_ColumnPropNameInRow="yc" msprop:Generator_ColumnPropNameInTable="ycColumn" msprop:Generator_UserColumnName="yc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsc" msprop:Generator_ColumnPropNameInRow="sc" msprop:Generator_ColumnPropNameInTable="scColumn" msprop:Generator_UserColumnName="sc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwc" msprop:Generator_ColumnPropNameInRow="wc" msprop:Generator_ColumnPropNameInTable="wcColumn" msprop:Generator_UserColumnName="wc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ws" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnws" msprop:Generator_ColumnPropNameInRow="ws" msprop:Generator_ColumnPropNameInTable="wsColumn" msprop:Generator_UserColumnName="ws" type="xs:decimal" minOccurs="0" />
+              <xs:element name="yf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnyf" msprop:Generator_ColumnPropNameInRow="yf" msprop:Generator_ColumnPropNameInTable="yfColumn" msprop:Generator_UserColumnName="yf" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsf" msprop:Generator_ColumnPropNameInRow="sf" msprop:Generator_ColumnPropNameInTable="sfColumn" msprop:Generator_UserColumnName="sf" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwf" msprop:Generator_ColumnPropNameInRow="wf" msprop:Generator_ColumnPropNameInTable="wfColumn" msprop:Generator_UserColumnName="wf" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vfmsdskjrhzb" msprop:Generator_TableClassName="VfmsdskjrhzbDataTable" msprop:Generator_TableVarName="tableVfmsdskjrhzb" msprop:Generator_TablePropName="Vfmsdskjrhzb" msprop:Generator_RowDeletingName="VfmsdskjrhzbRowDeleting" msprop:Generator_UserTableName="Vfmsdskjrhzb" msprop:Generator_RowChangingName="VfmsdskjrhzbRowChanging" msprop:Generator_RowEvHandlerName="VfmsdskjrhzbRowChangeEventHandler" msprop:Generator_RowDeletedName="VfmsdskjrhzbRowDeleted" msprop:Generator_RowEvArgName="VfmsdskjrhzbRowChangeEvent" msprop:Generator_RowChangedName="VfmsdskjrhzbRowChanged" msprop:Generator_RowClassName="VfmsdskjrhzbRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sl" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsl" msprop:Generator_ColumnPropNameInRow="sl" msprop:Generator_ColumnPropNameInTable="slColumn" msprop:Generator_UserColumnName="sl" type="xs:decimal" minOccurs="0" />
+              <xs:element name="yc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnyc" msprop:Generator_ColumnPropNameInRow="yc" msprop:Generator_ColumnPropNameInTable="ycColumn" msprop:Generator_UserColumnName="yc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsc" msprop:Generator_ColumnPropNameInRow="sc" msprop:Generator_ColumnPropNameInTable="scColumn" msprop:Generator_UserColumnName="sc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwc" msprop:Generator_ColumnPropNameInRow="wc" msprop:Generator_ColumnPropNameInTable="wcColumn" msprop:Generator_UserColumnName="wc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ws" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnws" msprop:Generator_ColumnPropNameInRow="ws" msprop:Generator_ColumnPropNameInTable="wsColumn" msprop:Generator_UserColumnName="ws" type="xs:decimal" minOccurs="0" />
+              <xs:element name="yf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnyf" msprop:Generator_ColumnPropNameInRow="yf" msprop:Generator_ColumnPropNameInTable="yfColumn" msprop:Generator_UserColumnName="yf" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsf" msprop:Generator_ColumnPropNameInRow="sf" msprop:Generator_ColumnPropNameInTable="sfColumn" msprop:Generator_UserColumnName="sf" type="xs:decimal" minOccurs="0" />
+              <xs:element name="wf" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwf" msprop:Generator_ColumnPropNameInRow="wf" msprop:Generator_ColumnPropNameInTable="wfColumn" msprop:Generator_UserColumnName="wf" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vfmsdskhzbxx" msprop:Generator_TableClassName="VfmsdskhzbxxDataTable" msprop:Generator_TableVarName="tableVfmsdskhzbxx" msprop:Generator_TablePropName="Vfmsdskhzbxx" msprop:Generator_RowDeletingName="VfmsdskhzbxxRowDeleting" msprop:Generator_UserTableName="Vfmsdskhzbxx" msprop:Generator_RowChangingName="VfmsdskhzbxxRowChanging" msprop:Generator_RowEvHandlerName="VfmsdskhzbxxRowChangeEventHandler" msprop:Generator_RowDeletedName="VfmsdskhzbxxRowDeleted" msprop:Generator_RowEvArgName="VfmsdskhzbxxRowChangeEvent" msprop:Generator_RowChangedName="VfmsdskhzbxxRowChanged" msprop:Generator_RowClassName="VfmsdskhzbxxRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bh" msprop:Generator_ColumnVarNameInTable="columnbh" msprop:Generator_ColumnPropNameInRow="bh" msprop:Generator_ColumnPropNameInTable="bhColumn" msprop:Generator_UserColumnName="bh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="inssj" msprop:Generator_ColumnVarNameInTable="columninssj" msprop:Generator_ColumnPropNameInRow="inssj" msprop:Generator_ColumnPropNameInTable="inssjColumn" msprop:Generator_UserColumnName="inssj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="qsd" msprop:Generator_ColumnVarNameInTable="columnqsd" msprop:Generator_ColumnPropNameInRow="qsd" msprop:Generator_ColumnPropNameInTable="qsdColumn" msprop:Generator_UserColumnName="qsd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mdd" msprop:Generator_ColumnVarNameInTable="columnmdd" msprop:Generator_ColumnPropNameInRow="mdd" msprop:Generator_ColumnPropNameInTable="mddColumn" msprop:Generator_UserColumnName="mdd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fhlxr" msprop:Generator_ColumnVarNameInTable="columnfhlxr" msprop:Generator_ColumnPropNameInRow="fhlxr" msprop:Generator_ColumnPropNameInTable="fhlxrColumn" msprop:Generator_UserColumnName="fhlxr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dhlxr" msprop:Generator_ColumnVarNameInTable="columndhlxr" msprop:Generator_ColumnPropNameInRow="dhlxr" msprop:Generator_ColumnPropNameInTable="dhlxrColumn" msprop:Generator_UserColumnName="dhlxr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsk" msprop:Generator_ColumnVarNameInTable="columndsk" msprop:Generator_ColumnPropNameInRow="dsk" msprop:Generator_ColumnPropNameInTable="dskColumn" msprop:Generator_UserColumnName="dsk" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ddsj" msprop:Generator_ColumnVarNameInTable="columnddsj" msprop:Generator_ColumnPropNameInRow="ddsj" msprop:Generator_ColumnPropNameInTable="ddsjColumn" msprop:Generator_UserColumnName="ddsj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="shsj" msprop:Generator_ColumnVarNameInTable="columnshsj" msprop:Generator_ColumnPropNameInRow="shsj" msprop:Generator_ColumnPropNameInTable="shsjColumn" msprop:Generator_UserColumnName="shsj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="qssj" msprop:Generator_ColumnVarNameInTable="columnqssj" msprop:Generator_ColumnPropNameInRow="qssj" msprop:Generator_ColumnPropNameInTable="qssjColumn" msprop:Generator_UserColumnName="qssj" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

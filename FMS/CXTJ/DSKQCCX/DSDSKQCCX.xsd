@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSDSKQCCX" targetNamespace="http://tempuri.org/DSDSKQCCX.xsd" xmlns:mstns="http://tempuri.org/DSDSKQCCX.xsd" xmlns="http://tempuri.org/DSDSKQCCX.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="TMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.TMSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VdskqccxTableAdapter" GeneratorDataComponentClassName="VdskqccxTableAdapter" Name="Vdskqccx" UserDataComponentName="VdskqccxTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS.dbo.Vdskqccx" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT bh, dsk, dskkhbh, mc, yhzh, lxr, xtffsj, dqmc, sljgmc, sldqmc, jgmc, inssj, qssj, shsj, cksjc, ffsjc, dksj, dksjc, sjdksx, ycts, dsffsj, ffsj, fkfs FROM dbo.Vdskqccx</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bh" DataSetColumn="bh" />
+              <Mapping SourceColumn="dsk" DataSetColumn="dsk" />
+              <Mapping SourceColumn="dskkhbh" DataSetColumn="dskkhbh" />
+              <Mapping SourceColumn="mc" DataSetColumn="mc" />
+              <Mapping SourceColumn="yhzh" DataSetColumn="yhzh" />
+              <Mapping SourceColumn="lxr" DataSetColumn="lxr" />
+              <Mapping SourceColumn="xtffsj" DataSetColumn="xtffsj" />
+              <Mapping SourceColumn="dqmc" DataSetColumn="dqmc" />
+              <Mapping SourceColumn="sljgmc" DataSetColumn="sljgmc" />
+              <Mapping SourceColumn="sldqmc" DataSetColumn="sldqmc" />
+              <Mapping SourceColumn="jgmc" DataSetColumn="jgmc" />
+              <Mapping SourceColumn="inssj" DataSetColumn="inssj" />
+              <Mapping SourceColumn="qssj" DataSetColumn="qssj" />
+              <Mapping SourceColumn="shsj" DataSetColumn="shsj" />
+              <Mapping SourceColumn="cksjc" DataSetColumn="cksjc" />
+              <Mapping SourceColumn="ffsjc" DataSetColumn="ffsjc" />
+              <Mapping SourceColumn="dksj" DataSetColumn="dksj" />
+              <Mapping SourceColumn="dksjc" DataSetColumn="dksjc" />
+              <Mapping SourceColumn="sjdksx" DataSetColumn="sjdksx" />
+              <Mapping SourceColumn="ycts" DataSetColumn="ycts" />
+              <Mapping SourceColumn="dsffsj" DataSetColumn="dsffsj" />
+              <Mapping SourceColumn="ffsj" DataSetColumn="ffsj" />
+              <Mapping SourceColumn="fkfs" DataSetColumn="fkfs" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSDSKQCCX" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSDSKQCCX" msprop:Generator_UserDSName="DSDSKQCCX">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vdskqccx" msprop:Generator_TableClassName="VdskqccxDataTable" msprop:Generator_TableVarName="tableVdskqccx" msprop:Generator_TablePropName="Vdskqccx" msprop:Generator_RowDeletingName="VdskqccxRowDeleting" msprop:Generator_RowChangingName="VdskqccxRowChanging" msprop:Generator_RowEvHandlerName="VdskqccxRowChangeEventHandler" msprop:Generator_RowDeletedName="VdskqccxRowDeleted" msprop:Generator_UserTableName="Vdskqccx" msprop:Generator_RowChangedName="VdskqccxRowChanged" msprop:Generator_RowEvArgName="VdskqccxRowChangeEvent" msprop:Generator_RowClassName="VdskqccxRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bh" msprop:Generator_ColumnVarNameInTable="columnbh" msprop:Generator_ColumnPropNameInRow="bh" msprop:Generator_ColumnPropNameInTable="bhColumn" msprop:Generator_UserColumnName="bh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsk" msprop:Generator_ColumnVarNameInTable="columndsk" msprop:Generator_ColumnPropNameInRow="dsk" msprop:Generator_ColumnPropNameInTable="dskColumn" msprop:Generator_UserColumnName="dsk" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dskkhbh" msprop:Generator_ColumnVarNameInTable="columndskkhbh" msprop:Generator_ColumnPropNameInRow="dskkhbh" msprop:Generator_ColumnPropNameInTable="dskkhbhColumn" msprop:Generator_UserColumnName="dskkhbh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mc" msprop:Generator_ColumnVarNameInTable="columnmc" msprop:Generator_ColumnPropNameInRow="mc" msprop:Generator_ColumnPropNameInTable="mcColumn" msprop:Generator_UserColumnName="mc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="yhzh" msprop:Generator_ColumnVarNameInTable="columnyhzh" msprop:Generator_ColumnPropNameInRow="yhzh" msprop:Generator_ColumnPropNameInTable="yhzhColumn" msprop:Generator_UserColumnName="yhzh" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lxr" msprop:Generator_ColumnVarNameInTable="columnlxr" msprop:Generator_ColumnPropNameInRow="lxr" msprop:Generator_ColumnPropNameInTable="lxrColumn" msprop:Generator_UserColumnName="lxr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="xtffsj" msprop:Generator_ColumnVarNameInTable="columnxtffsj" msprop:Generator_ColumnPropNameInRow="xtffsj" msprop:Generator_ColumnPropNameInTable="xtffsjColumn" msprop:Generator_UserColumnName="xtffsj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dqmc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndqmc" msprop:Generator_ColumnPropNameInRow="dqmc" msprop:Generator_ColumnPropNameInTable="dqmcColumn" msprop:Generator_UserColumnName="dqmc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sljgmc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsljgmc" msprop:Generator_ColumnPropNameInRow="sljgmc" msprop:Generator_ColumnPropNameInTable="sljgmcColumn" msprop:Generator_UserColumnName="sljgmc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sldqmc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsldqmc" msprop:Generator_ColumnPropNameInRow="sldqmc" msprop:Generator_ColumnPropNameInTable="sldqmcColumn" msprop:Generator_UserColumnName="sldqmc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="jgmc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnjgmc" msprop:Generator_ColumnPropNameInRow="jgmc" msprop:Generator_ColumnPropNameInTable="jgmcColumn" msprop:Generator_UserColumnName="jgmc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="inssj" msprop:Generator_ColumnVarNameInTable="columninssj" msprop:Generator_ColumnPropNameInRow="inssj" msprop:Generator_ColumnPropNameInTable="inssjColumn" msprop:Generator_UserColumnName="inssj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="qssj" msprop:Generator_ColumnVarNameInTable="columnqssj" msprop:Generator_ColumnPropNameInRow="qssj" msprop:Generator_ColumnPropNameInTable="qssjColumn" msprop:Generator_UserColumnName="qssj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="shsj" msprop:Generator_ColumnVarNameInTable="columnshsj" msprop:Generator_ColumnPropNameInRow="shsj" msprop:Generator_ColumnPropNameInTable="shsjColumn" msprop:Generator_UserColumnName="shsj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cksjc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncksjc" msprop:Generator_ColumnPropNameInRow="cksjc" msprop:Generator_ColumnPropNameInTable="cksjcColumn" msprop:Generator_UserColumnName="cksjc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ffsjc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnffsjc" msprop:Generator_ColumnPropNameInRow="ffsjc" msprop:Generator_ColumnPropNameInTable="ffsjcColumn" msprop:Generator_UserColumnName="ffsjc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dksj" msprop:Generator_ColumnVarNameInTable="columndksj" msprop:Generator_ColumnPropNameInRow="dksj" msprop:Generator_ColumnPropNameInTable="dksjColumn" msprop:Generator_UserColumnName="dksj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dksjc" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndksjc" msprop:Generator_ColumnPropNameInRow="dksjc" msprop:Generator_ColumnPropNameInTable="dksjcColumn" msprop:Generator_UserColumnName="dksjc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sjdksx" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsjdksx" msprop:Generator_ColumnPropNameInRow="sjdksx" msprop:Generator_ColumnPropNameInTable="sjdksxColumn" msprop:Generator_UserColumnName="sjdksx" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ycts" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnycts" msprop:Generator_ColumnPropNameInRow="ycts" msprop:Generator_ColumnPropNameInTable="yctsColumn" msprop:Generator_UserColumnName="ycts" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dsffsj" msprop:Generator_ColumnVarNameInTable="columndsffsj" msprop:Generator_ColumnPropNameInRow="dsffsj" msprop:Generator_ColumnPropNameInTable="dsffsjColumn" msprop:Generator_UserColumnName="dsffsj" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ffsj" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnffsj" msprop:Generator_ColumnPropNameInRow="ffsj" msprop:Generator_ColumnPropNameInTable="ffsjColumn" msprop:Generator_UserColumnName="ffsj" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fkfs" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfkfs" msprop:Generator_ColumnPropNameInRow="fkfs" msprop:Generator_ColumnPropNameInTable="fkfsColumn" msprop:Generator_UserColumnName="fkfs" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

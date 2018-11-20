@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSXBYYSRCX" targetNamespace="http://tempuri.org/DSXBYYSRCX.xsd" xmlns:mstns="http://tempuri.org/DSXBYYSRCX.xsd" xmlns="http://tempuri.org/DSXBYYSRCX.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="TMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TMSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.TMSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vfmsyysrcx3TableAdapter" GeneratorDataComponentClassName="Vfmsyysrcx3TableAdapter" Name="Vfmsyysrcx3" UserDataComponentName="Vfmsyysrcx3TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TMSConnectionString (Web.config)" DbObjectName="TMS.dbo.Vfmsyysrcx3" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT mc, ydid, inssj, sljgid, ywqy, bh, fhxf, bf, jezj, zzl, ztj, jfzl, cz FROM dbo.Vfmsyysrcx3</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="mc" DataSetColumn="mc" />
+              <Mapping SourceColumn="ydid" DataSetColumn="ydid" />
+              <Mapping SourceColumn="inssj" DataSetColumn="inssj" />
+              <Mapping SourceColumn="sljgid" DataSetColumn="sljgid" />
+              <Mapping SourceColumn="ywqy" DataSetColumn="ywqy" />
+              <Mapping SourceColumn="bh" DataSetColumn="bh" />
+              <Mapping SourceColumn="fhxf" DataSetColumn="fhxf" />
+              <Mapping SourceColumn="bf" DataSetColumn="bf" />
+              <Mapping SourceColumn="jezj" DataSetColumn="jezj" />
+              <Mapping SourceColumn="zzl" DataSetColumn="zzl" />
+              <Mapping SourceColumn="ztj" DataSetColumn="ztj" />
+              <Mapping SourceColumn="jfzl" DataSetColumn="jfzl" />
+              <Mapping SourceColumn="cz" DataSetColumn="cz" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSXBYYSRCX" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSXBYYSRCX" msprop:Generator_UserDSName="DSXBYYSRCX">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vfmsyysrcx3" msprop:Generator_TableClassName="Vfmsyysrcx3DataTable" msprop:Generator_TableVarName="tableVfmsyysrcx3" msprop:Generator_TablePropName="Vfmsyysrcx3" msprop:Generator_RowDeletingName="Vfmsyysrcx3RowDeleting" msprop:Generator_RowChangingName="Vfmsyysrcx3RowChanging" msprop:Generator_RowEvHandlerName="Vfmsyysrcx3RowChangeEventHandler" msprop:Generator_RowDeletedName="Vfmsyysrcx3RowDeleted" msprop:Generator_UserTableName="Vfmsyysrcx3" msprop:Generator_RowChangedName="Vfmsyysrcx3RowChanged" msprop:Generator_RowEvArgName="Vfmsyysrcx3RowChangeEvent" msprop:Generator_RowClassName="Vfmsyysrcx3Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mc" msprop:Generator_ColumnVarNameInTable="columnmc" msprop:Generator_ColumnPropNameInRow="mc" msprop:Generator_ColumnPropNameInTable="mcColumn" msprop:Generator_UserColumnName="mc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ydid" msprop:Generator_ColumnVarNameInTable="columnydid" msprop:Generator_ColumnPropNameInRow="ydid" msprop:Generator_ColumnPropNameInTable="ydidColumn" msprop:Generator_UserColumnName="ydid" type="xs:int" />
+              <xs:element name="inssj" msprop:Generator_ColumnVarNameInTable="columninssj" msprop:Generator_ColumnPropNameInRow="inssj" msprop:Generator_ColumnPropNameInTable="inssjColumn" msprop:Generator_UserColumnName="inssj" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="sljgid" msprop:Generator_ColumnVarNameInTable="columnsljgid" msprop:Generator_ColumnPropNameInRow="sljgid" msprop:Generator_ColumnPropNameInTable="sljgidColumn" msprop:Generator_UserColumnName="sljgid" type="xs:int" minOccurs="0" />
+              <xs:element name="ywqy" msprop:Generator_ColumnVarNameInTable="columnywqy" msprop:Generator_ColumnPropNameInRow="ywqy" msprop:Generator_ColumnPropNameInTable="ywqyColumn" msprop:Generator_UserColumnName="ywqy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bh" msprop:Generator_ColumnVarNameInTable="columnbh" msprop:Generator_ColumnPropNameInRow="bh" msprop:Generator_ColumnPropNameInTable="bhColumn" msprop:Generator_UserColumnName="bh">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fhxf" msprop:Generator_ColumnVarNameInTable="columnfhxf" msprop:Generator_ColumnPropNameInRow="fhxf" msprop:Generator_ColumnPropNameInTable="fhxfColumn" msprop:Generator_UserColumnName="fhxf" type="xs:decimal" minOccurs="0" />
+              <xs:element name="bf" msprop:Generator_ColumnVarNameInTable="columnbf" msprop:Generator_ColumnPropNameInRow="bf" msprop:Generator_ColumnPropNameInTable="bfColumn" msprop:Generator_UserColumnName="bf" type="xs:decimal" />
+              <xs:element name="jezj" msprop:Generator_ColumnVarNameInTable="columnjezj" msprop:Generator_ColumnPropNameInRow="jezj" msprop:Generator_ColumnPropNameInTable="jezjColumn" msprop:Generator_UserColumnName="jezj" type="xs:decimal" minOccurs="0" />
+              <xs:element name="zzl" msprop:Generator_ColumnVarNameInTable="columnzzl" msprop:Generator_ColumnPropNameInRow="zzl" msprop:Generator_ColumnPropNameInTable="zzlColumn" msprop:Generator_UserColumnName="zzl" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ztj" msprop:Generator_ColumnVarNameInTable="columnztj" msprop:Generator_ColumnPropNameInRow="ztj" msprop:Generator_ColumnPropNameInTable="ztjColumn" msprop:Generator_UserColumnName="ztj" type="xs:decimal" minOccurs="0" />
+              <xs:element name="jfzl" msprop:Generator_ColumnVarNameInTable="columnjfzl" msprop:Generator_ColumnPropNameInRow="jfzl" msprop:Generator_ColumnPropNameInTable="jfzlColumn" msprop:Generator_UserColumnName="jfzl" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cz" msprop:Generator_ColumnVarNameInTable="columncz" msprop:Generator_ColumnPropNameInRow="cz" msprop:Generator_ColumnPropNameInTable="czColumn" msprop:Generator_UserColumnName="cz">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
