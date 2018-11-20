@@ -1,0 +1,5 @@
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\bin\Release\HttpHelper.dll
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\bin\Release\HttpHelper.pdb
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\obj\Release\HttpHelper.dll
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\obj\Release\HttpHelper.pdb
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\obj\Release\CsharpHttpHelper.csprojResolveAssemblyReference.cache

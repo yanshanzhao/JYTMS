@@ -1,0 +1,17 @@
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.XML
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.dll
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.pdb
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\obj\Debug\HttpHelper.dll
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\obj\Debug\HttpHelper.pdb
+E:\源代码\TMS项目\JYTMS\CsharpHttpHelper\obj\Debug\CsharpHttpHelper.csprojResolveAssemblyReference.cache
+E:\源代码\TMS项目\2017年项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.XML
+E:\源代码\TMS项目\2017年项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.dll
+E:\源代码\TMS项目\2017年项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.pdb
+E:\源代码\TMS项目\2017年项目\JYTMS\CsharpHttpHelper\obj\Debug\HttpHelper.dll
+E:\源代码\TMS项目\2017年项目\JYTMS\CsharpHttpHelper\obj\Debug\HttpHelper.pdb
+E:\源代码\TMS项目\2018年项目\TMS项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.dll
+E:\源代码\TMS项目\2018年项目\TMS项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.pdb
+E:\源代码\TMS项目\2018年项目\TMS项目\JYTMS\CsharpHttpHelper\obj\Debug\HttpHelper.dll
+E:\源代码\TMS项目\2018年项目\TMS项目\JYTMS\CsharpHttpHelper\obj\Debug\HttpHelper.pdb
+E:\源代码\TMS项目\2018年项目\TMS项目\JYTMS\CsharpHttpHelper\bin\Debug\HttpHelper.XML
+E:\源代码\TMS项目\2018年项目\TMS项目\JYTMS\CsharpHttpHelper\obj\Debug\CsharpHttpHelper.csprojResolveAssemblyReference.cache
